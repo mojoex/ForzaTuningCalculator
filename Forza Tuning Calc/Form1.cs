@@ -1,9 +1,9 @@
-﻿using Forza_Tuning_Calc.DTO;
-using Forza_Tuning_Calc.DTO.Input;
+﻿using Forza_Tuning_Calculator.DTO;
+using Forza_Tuning_Calculator.DTO.Input;
 using System;
 using System.Windows.Forms;
 
-namespace Forza_Tuning_Calc
+namespace Forza_Tuning_Calculator
 {
 
     public partial class ForzaTuningCalc : Form
@@ -157,12 +157,12 @@ namespace Forza_Tuning_Calc
             result.Damping.ReboundMax = float.Parse(txtRebMax.Text);
             result.Springs.FrontMin = float.Parse(txtFrontSpringMin.Text);
             result.Springs.FrontMax = float.Parse(txtFrontSpringMax.Text);
-            result.Springs.RearMin = float.Parse(txtRearSpringMin.Text);
-            result.Springs.RearMax = float.Parse(txtRearSpringMax.Text);
+            result.Springs.RearMin = result.Springs.FrontMin; //float.Parse(txtRearSpringMin.Text);
+            result.Springs.RearMax = result.Springs.FrontMax; //float.Parse(txtRearSpringMax.Text);
             result.ARBs.FrontMin = float.Parse(txtFrontArbMin.Text);
             result.ARBs.FrontMax = float.Parse(txtFrontArbMax.Text);
-            result.ARBs.RearMin = float.Parse(txtRearArbMin.Text);
-            result.ARBs.RearMax = float.Parse(txtRearArbMax.Text);
+            result.ARBs.RearMin = result.ARBs.FrontMin; //float.Parse(txtRearArbMin.Text);
+            result.ARBs.RearMax = result.ARBs.FrontMax; //float.Parse(txtRearArbMax.Text);
 
             return result;
         }

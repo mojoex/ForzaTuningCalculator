@@ -1,4 +1,4 @@
-﻿namespace Forza_Tuning_Calc.DTO
+﻿namespace Forza_Tuning_Calculator.DTO
 {
     public class ResultObject
     {

@@ -1,4 +1,4 @@
-﻿namespace Forza_Tuning_Calc.DTO.Input
+﻿namespace Forza_Tuning_Calculator.DTO.Input
 {
     public class UserInput
     {

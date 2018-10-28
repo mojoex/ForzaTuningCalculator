@@ -1,8 +1,8 @@
-﻿using Forza_Tuning_Calc.DTO;
-using Forza_Tuning_Calc.DTO.Input;
+﻿using Forza_Tuning_Calculator.DTO;
+using Forza_Tuning_Calculator.DTO.Input;
 using System.Windows.Forms;
 
-namespace Forza_Tuning_Calc
+namespace Forza_Tuning_Calculator
 {
     public class Utils
     {

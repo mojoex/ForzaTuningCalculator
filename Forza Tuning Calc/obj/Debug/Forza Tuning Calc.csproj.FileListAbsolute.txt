@@ -11,3 +11,17 @@ D:\Development\TuningCalc\Forza Tuning Calc\Forza Tuning Calc\bin\Debug\Forza Tu
 D:\Development\TuningCalc\Forza Tuning Calc\Forza Tuning Calc\bin\Debug\Forza Tuning Calc.application
 D:\Development\TuningCalc\Forza Tuning Calc\Forza Tuning Calc\obj\Debug\Forza Tuning Calc.exe.manifest
 D:\Development\TuningCalc\Forza Tuning Calc\Forza Tuning Calc\obj\Debug\Forza Tuning Calc.application
+D:\Development\ForzaTuningCalculator\Forza Tuning Calc\obj\Debug\Forza Tuning Calc.csprojAssemblyReference.cache
+D:\Development\ForzaTuningCalculator\Forza Tuning Calc\obj\Debug\Forza Tuning Calc.csproj.GenerateResource.cache
+D:\Development\ForzaTuningCalculator\Forza Tuning Calc\obj\Debug\Forza Tuning Calc.csproj.CoreCompileInputs.cache
+D:\Development\ForzaTuningCalculator\Forza Tuning Calc\obj\Debug\Forza_Tuning_Calculator.ForzaTuningCalc.resources
+D:\Development\ForzaTuningCalculator\Forza Tuning Calc\obj\Debug\Forza_Tuning_Calculator.Properties.Resources.resources
+D:\Development\ForzaTuningCalculator\Forza Tuning Calc\bin\Debug\Forza Tune Calculator.exe.config
+D:\Development\ForzaTuningCalculator\Forza Tuning Calc\bin\Debug\Forza Tune Calculator.exe.manifest
+D:\Development\ForzaTuningCalculator\Forza Tuning Calc\bin\Debug\Forza Tune Calculator.application
+D:\Development\ForzaTuningCalculator\Forza Tuning Calc\bin\Debug\Forza Tune Calculator.exe
+D:\Development\ForzaTuningCalculator\Forza Tuning Calc\bin\Debug\Forza Tune Calculator.pdb
+D:\Development\ForzaTuningCalculator\Forza Tuning Calc\obj\Debug\Forza Tune Calculator.exe.manifest
+D:\Development\ForzaTuningCalculator\Forza Tuning Calc\obj\Debug\Forza Tune Calculator.application
+D:\Development\ForzaTuningCalculator\Forza Tuning Calc\obj\Debug\Forza Tune Calculator.exe
+D:\Development\ForzaTuningCalculator\Forza Tuning Calc\obj\Debug\Forza Tune Calculator.pdb
