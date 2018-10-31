@@ -28,11 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ForzaTuningCalc));
             this.lblFrontWeight = new System.Windows.Forms.Label();
             this.txtFrontWeight = new System.Windows.Forms.TextBox();
-            this.txtWeight = new System.Windows.Forms.TextBox();
-            this.lblWeight = new System.Windows.Forms.Label();
             this.gbWeight = new System.Windows.Forms.GroupBox();
             this.label3 = new System.Windows.Forms.Label();
             this.gbDamping = new System.Windows.Forms.GroupBox();
@@ -48,8 +45,8 @@
             this.btnTune = new System.Windows.Forms.Button();
             this.resRebFront = new System.Windows.Forms.Label();
             this.resRebRear = new System.Windows.Forms.Label();
-            this.resBumpRear = new System.Windows.Forms.Label();
-            this.resBumpFront = new System.Windows.Forms.Label();
+            this.resBumpRear50 = new System.Windows.Forms.Label();
+            this.resBumpFront50 = new System.Windows.Forms.Label();
             this.resSpringRear = new System.Windows.Forms.Label();
             this.resSpringFront = new System.Windows.Forms.Label();
             this.gbInputs = new System.Windows.Forms.GroupBox();
@@ -61,40 +58,45 @@
             this.label1 = new System.Windows.Forms.Label();
             this.linkLabel1 = new System.Windows.Forms.LinkLabel();
             this.gbResults = new System.Windows.Forms.GroupBox();
+            this.gbCalculated = new System.Windows.Forms.GroupBox();
             this.gbResArb = new System.Windows.Forms.GroupBox();
             this.label14 = new System.Windows.Forms.Label();
             this.label15 = new System.Windows.Forms.Label();
             this.resRearArb = new System.Windows.Forms.Label();
             this.resFrontArb = new System.Windows.Forms.Label();
-            this.gbSpringsRes = new System.Windows.Forms.GroupBox();
-            this.label6 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
             this.gbDampingRes = new System.Windows.Forms.GroupBox();
             this.label9 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.lblRebFrontRes = new System.Windows.Forms.Label();
             this.lblRebFront = new System.Windows.Forms.Label();
-            this.gbCalculated = new System.Windows.Forms.GroupBox();
-            this.gbAdvisories = new System.Windows.Forms.GroupBox();
+            this.gbSpringsRes = new System.Windows.Forms.GroupBox();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
+            this.rearArbVar = new System.Windows.Forms.Label();
+            this.frontArbVar = new System.Windows.Forms.Label();
+            this.rearSpringVar = new System.Windows.Forms.Label();
+            this.frontSpringVar = new System.Windows.Forms.Label();
+            this.resBumpRear63 = new System.Windows.Forms.Label();
+            this.resBumpFront63 = new System.Windows.Forms.Label();
+            this.resBumpFront75 = new System.Windows.Forms.Label();
+            this.resBumpRear75 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
-            this.label10 = new System.Windows.Forms.Label();
             this.gbWeight.SuspendLayout();
             this.gbDamping.SuspendLayout();
             this.gbSprings.SuspendLayout();
             this.gbInputs.SuspendLayout();
             this.gbArbs.SuspendLayout();
             this.gbResults.SuspendLayout();
-            this.gbResArb.SuspendLayout();
-            this.gbSpringsRes.SuspendLayout();
-            this.gbDampingRes.SuspendLayout();
             this.gbCalculated.SuspendLayout();
-            this.gbAdvisories.SuspendLayout();
+            this.gbResArb.SuspendLayout();
+            this.gbDampingRes.SuspendLayout();
+            this.gbSpringsRes.SuspendLayout();
             this.SuspendLayout();
             // 
             // lblFrontWeight
             // 
             this.lblFrontWeight.AutoSize = true;
-            this.lblFrontWeight.Location = new System.Drawing.Point(6, 55);
+            this.lblFrontWeight.Location = new System.Drawing.Point(6, 21);
             this.lblFrontWeight.Name = "lblFrontWeight";
             this.lblFrontWeight.Size = new System.Drawing.Size(79, 13);
             this.lblFrontWeight.TabIndex = 0;
@@ -103,40 +105,20 @@
             // 
             // txtFrontWeight
             // 
-            this.txtFrontWeight.Location = new System.Drawing.Point(136, 55);
+            this.txtFrontWeight.Location = new System.Drawing.Point(112, 21);
             this.txtFrontWeight.Name = "txtFrontWeight";
             this.txtFrontWeight.Size = new System.Drawing.Size(100, 20);
             this.txtFrontWeight.TabIndex = 1;
             this.txtFrontWeight.TextChanged += new System.EventHandler(this.txtFrontWeight_TextChanged);
             // 
-            // txtWeight
-            // 
-            this.txtWeight.Location = new System.Drawing.Point(136, 29);
-            this.txtWeight.Name = "txtWeight";
-            this.txtWeight.Size = new System.Drawing.Size(100, 20);
-            this.txtWeight.TabIndex = 3;
-            this.txtWeight.Text = "N/A in BETA";
-            this.txtWeight.TextChanged += new System.EventHandler(this.txtWeight_TextChanged);
-            // 
-            // lblWeight
-            // 
-            this.lblWeight.AutoSize = true;
-            this.lblWeight.Location = new System.Drawing.Point(6, 29);
-            this.lblWeight.Name = "lblWeight";
-            this.lblWeight.Size = new System.Drawing.Size(62, 13);
-            this.lblWeight.TabIndex = 2;
-            this.lblWeight.Text = "Weight (kg)";
-            // 
             // gbWeight
             // 
             this.gbWeight.Controls.Add(this.label3);
-            this.gbWeight.Controls.Add(this.lblWeight);
-            this.gbWeight.Controls.Add(this.txtWeight);
             this.gbWeight.Controls.Add(this.lblFrontWeight);
             this.gbWeight.Controls.Add(this.txtFrontWeight);
             this.gbWeight.Location = new System.Drawing.Point(6, 52);
             this.gbWeight.Name = "gbWeight";
-            this.gbWeight.Size = new System.Drawing.Size(354, 89);
+            this.gbWeight.Size = new System.Drawing.Size(278, 50);
             this.gbWeight.TabIndex = 4;
             this.gbWeight.TabStop = false;
             this.gbWeight.Text = "Weight";
@@ -145,7 +127,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.ForeColor = System.Drawing.Color.Red;
-            this.label3.Location = new System.Drawing.Point(242, 55);
+            this.label3.Location = new System.Drawing.Point(218, 22);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(11, 13);
             this.label3.TabIndex = 5;
@@ -157,9 +139,9 @@
             this.gbDamping.Controls.Add(this.txtRebMax);
             this.gbDamping.Controls.Add(this.lblRebound);
             this.gbDamping.Controls.Add(this.txtRebMin);
-            this.gbDamping.Location = new System.Drawing.Point(6, 147);
+            this.gbDamping.Location = new System.Drawing.Point(6, 108);
             this.gbDamping.Name = "gbDamping";
-            this.gbDamping.Size = new System.Drawing.Size(354, 57);
+            this.gbDamping.Size = new System.Drawing.Size(278, 57);
             this.gbDamping.TabIndex = 5;
             this.gbDamping.TabStop = false;
             this.gbDamping.Text = "Damping";
@@ -180,6 +162,7 @@
             this.txtRebMax.Name = "txtRebMax";
             this.txtRebMax.Size = new System.Drawing.Size(60, 20);
             this.txtRebMax.TabIndex = 4;
+            this.txtRebMax.Text = "20";
             this.txtRebMax.TextChanged += new System.EventHandler(this.txtRebMax_TextChanged);
             // 
             // lblRebound
@@ -198,6 +181,7 @@
             this.txtRebMin.Name = "txtRebMin";
             this.txtRebMin.Size = new System.Drawing.Size(58, 20);
             this.txtRebMin.TabIndex = 3;
+            this.txtRebMin.Text = "3";
             this.txtRebMin.TextChanged += new System.EventHandler(this.txtRebMin_TextChanged);
             // 
             // gbSprings
@@ -206,9 +190,9 @@
             this.gbSprings.Controls.Add(this.txtFrontSpringMax);
             this.gbSprings.Controls.Add(this.lblFrontSpring);
             this.gbSprings.Controls.Add(this.txtFrontSpringMin);
-            this.gbSprings.Location = new System.Drawing.Point(6, 210);
+            this.gbSprings.Location = new System.Drawing.Point(6, 171);
             this.gbSprings.Name = "gbSprings";
-            this.gbSprings.Size = new System.Drawing.Size(354, 58);
+            this.gbSprings.Size = new System.Drawing.Size(278, 58);
             this.gbSprings.TabIndex = 6;
             this.gbSprings.TabStop = false;
             this.gbSprings.Text = "Springs";
@@ -251,7 +235,7 @@
             // btnTune
             // 
             this.btnTune.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnTune.Location = new System.Drawing.Point(51, 281);
+            this.btnTune.Location = new System.Drawing.Point(209, 317);
             this.btnTune.Name = "btnTune";
             this.btnTune.Size = new System.Drawing.Size(75, 23);
             this.btnTune.TabIndex = 7;
@@ -277,7 +261,7 @@
             this.resRebRear.AutoSize = true;
             this.resRebRear.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.resRebRear.ForeColor = System.Drawing.Color.SeaGreen;
-            this.resRebRear.Location = new System.Drawing.Point(90, 33);
+            this.resRebRear.Location = new System.Drawing.Point(90, 36);
             this.resRebRear.Name = "resRebRear";
             this.resRebRear.Size = new System.Drawing.Size(52, 18);
             this.resRebRear.TabIndex = 8;
@@ -285,31 +269,31 @@
             this.resRebRear.Visible = false;
             this.resRebRear.Click += new System.EventHandler(this.resRebRear_Click);
             // 
-            // resBumpRear
+            // resBumpRear50
             // 
-            this.resBumpRear.AutoSize = true;
-            this.resBumpRear.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.resBumpRear.ForeColor = System.Drawing.Color.SeaGreen;
-            this.resBumpRear.Location = new System.Drawing.Point(90, 73);
-            this.resBumpRear.Name = "resBumpRear";
-            this.resBumpRear.Size = new System.Drawing.Size(52, 18);
-            this.resBumpRear.TabIndex = 9;
-            this.resBumpRear.Text = "label1";
-            this.resBumpRear.Visible = false;
-            this.resBumpRear.Click += new System.EventHandler(this.resBumpRear_Click);
+            this.resBumpRear50.AutoSize = true;
+            this.resBumpRear50.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.resBumpRear50.ForeColor = System.Drawing.Color.SeaGreen;
+            this.resBumpRear50.Location = new System.Drawing.Point(90, 89);
+            this.resBumpRear50.Name = "resBumpRear50";
+            this.resBumpRear50.Size = new System.Drawing.Size(52, 17);
+            this.resBumpRear50.TabIndex = 9;
+            this.resBumpRear50.Text = "label1";
+            this.resBumpRear50.Visible = false;
+            this.resBumpRear50.Click += new System.EventHandler(this.resBumpRear_Click);
             // 
-            // resBumpFront
+            // resBumpFront50
             // 
-            this.resBumpFront.AutoSize = true;
-            this.resBumpFront.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.resBumpFront.ForeColor = System.Drawing.Color.SeaGreen;
-            this.resBumpFront.Location = new System.Drawing.Point(90, 53);
-            this.resBumpFront.Name = "resBumpFront";
-            this.resBumpFront.Size = new System.Drawing.Size(52, 18);
-            this.resBumpFront.TabIndex = 10;
-            this.resBumpFront.Text = "label1";
-            this.resBumpFront.Visible = false;
-            this.resBumpFront.Click += new System.EventHandler(this.resBumpFront_Click);
+            this.resBumpFront50.AutoSize = true;
+            this.resBumpFront50.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.resBumpFront50.ForeColor = System.Drawing.Color.SeaGreen;
+            this.resBumpFront50.Location = new System.Drawing.Point(90, 58);
+            this.resBumpFront50.Name = "resBumpFront50";
+            this.resBumpFront50.Size = new System.Drawing.Size(52, 17);
+            this.resBumpFront50.TabIndex = 10;
+            this.resBumpFront50.Text = "label1";
+            this.resBumpFront50.Visible = false;
+            this.resBumpFront50.Click += new System.EventHandler(this.resBumpFront_Click);
             // 
             // resSpringRear
             // 
@@ -341,6 +325,7 @@
             // 
             this.gbInputs.Controls.Add(this.gbArbs);
             this.gbInputs.Controls.Add(this.label1);
+            this.gbInputs.Controls.Add(this.btnTune);
             this.gbInputs.Controls.Add(this.linkLabel1);
             this.gbInputs.Controls.Add(this.gbWeight);
             this.gbInputs.Controls.Add(this.gbDamping);
@@ -348,7 +333,7 @@
             this.gbInputs.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.gbInputs.Location = new System.Drawing.Point(12, 12);
             this.gbInputs.Name = "gbInputs";
-            this.gbInputs.Size = new System.Drawing.Size(375, 348);
+            this.gbInputs.Size = new System.Drawing.Size(299, 348);
             this.gbInputs.TabIndex = 13;
             this.gbInputs.TabStop = false;
             this.gbInputs.Text = "Input Values";
@@ -359,9 +344,9 @@
             this.gbArbs.Controls.Add(this.txtFrontArbMax);
             this.gbArbs.Controls.Add(this.label12);
             this.gbArbs.Controls.Add(this.txtFrontArbMin);
-            this.gbArbs.Location = new System.Drawing.Point(6, 274);
+            this.gbArbs.Location = new System.Drawing.Point(6, 235);
             this.gbArbs.Name = "gbArbs";
-            this.gbArbs.Size = new System.Drawing.Size(354, 63);
+            this.gbArbs.Size = new System.Drawing.Size(278, 63);
             this.gbArbs.TabIndex = 9;
             this.gbArbs.TabStop = false;
             this.gbArbs.Text = "ARBs";
@@ -382,6 +367,7 @@
             this.txtFrontArbMax.Name = "txtFrontArbMax";
             this.txtFrontArbMax.Size = new System.Drawing.Size(60, 20);
             this.txtFrontArbMax.TabIndex = 4;
+            this.txtFrontArbMax.Text = "65";
             this.txtFrontArbMax.TextChanged += new System.EventHandler(this.txtFrontArbMax_TextChanged);
             // 
             // label12
@@ -399,6 +385,7 @@
             this.txtFrontArbMin.Name = "txtFrontArbMin";
             this.txtFrontArbMin.Size = new System.Drawing.Size(58, 20);
             this.txtFrontArbMin.TabIndex = 3;
+            this.txtFrontArbMin.Text = "1";
             this.txtFrontArbMin.TextChanged += new System.EventHandler(this.txtFrontArbMin_TextChanged);
             // 
             // label1
@@ -420,24 +407,38 @@
             // 
             // gbResults
             // 
-            this.gbResults.Controls.Add(this.gbAdvisories);
             this.gbResults.Controls.Add(this.gbCalculated);
-            this.gbResults.Location = new System.Drawing.Point(393, 12);
+            this.gbResults.Location = new System.Drawing.Point(317, 12);
             this.gbResults.Name = "gbResults";
-            this.gbResults.Size = new System.Drawing.Size(492, 348);
+            this.gbResults.Size = new System.Drawing.Size(568, 348);
             this.gbResults.TabIndex = 14;
             this.gbResults.TabStop = false;
             this.gbResults.Text = "Results";
+            // 
+            // gbCalculated
+            // 
+            this.gbCalculated.Controls.Add(this.label5);
+            this.gbCalculated.Controls.Add(this.gbResArb);
+            this.gbCalculated.Controls.Add(this.gbDampingRes);
+            this.gbCalculated.Controls.Add(this.gbSpringsRes);
+            this.gbCalculated.Location = new System.Drawing.Point(8, 19);
+            this.gbCalculated.Name = "gbCalculated";
+            this.gbCalculated.Size = new System.Drawing.Size(508, 318);
+            this.gbCalculated.TabIndex = 14;
+            this.gbCalculated.TabStop = false;
+            this.gbCalculated.Text = "Calculated";
             // 
             // gbResArb
             // 
             this.gbResArb.Controls.Add(this.label14);
             this.gbResArb.Controls.Add(this.label15);
+            this.gbResArb.Controls.Add(this.rearArbVar);
+            this.gbResArb.Controls.Add(this.frontArbVar);
             this.gbResArb.Controls.Add(this.resRearArb);
             this.gbResArb.Controls.Add(this.resFrontArb);
-            this.gbResArb.Location = new System.Drawing.Point(6, 195);
+            this.gbResArb.Location = new System.Drawing.Point(6, 252);
             this.gbResArb.Name = "gbResArb";
-            this.gbResArb.Size = new System.Drawing.Size(172, 60);
+            this.gbResArb.Size = new System.Drawing.Size(271, 60);
             this.gbResArb.TabIndex = 13;
             this.gbResArb.TabStop = false;
             this.gbResArb.Text = "ARBs";
@@ -486,15 +487,74 @@
             this.resFrontArb.Visible = false;
             this.resFrontArb.Click += new System.EventHandler(this.label17_Click);
             // 
+            // gbDampingRes
+            // 
+            this.gbDampingRes.Controls.Add(this.resBumpRear75);
+            this.gbDampingRes.Controls.Add(this.resBumpFront75);
+            this.gbDampingRes.Controls.Add(this.resBumpFront63);
+            this.gbDampingRes.Controls.Add(this.resBumpRear63);
+            this.gbDampingRes.Controls.Add(this.label9);
+            this.gbDampingRes.Controls.Add(this.label7);
+            this.gbDampingRes.Controls.Add(this.lblRebFrontRes);
+            this.gbDampingRes.Controls.Add(this.lblRebFront);
+            this.gbDampingRes.Controls.Add(this.resBumpRear50);
+            this.gbDampingRes.Controls.Add(this.resBumpFront50);
+            this.gbDampingRes.Controls.Add(this.resRebFront);
+            this.gbDampingRes.Controls.Add(this.resRebRear);
+            this.gbDampingRes.Location = new System.Drawing.Point(6, 59);
+            this.gbDampingRes.Name = "gbDampingRes";
+            this.gbDampingRes.Size = new System.Drawing.Size(483, 118);
+            this.gbDampingRes.TabIndex = 5;
+            this.gbDampingRes.TabStop = false;
+            this.gbDampingRes.Text = "Damping";
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(6, 62);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(61, 13);
+            this.label9.TabIndex = 6;
+            this.label9.Text = "Front Bump";
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(6, 89);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(60, 13);
+            this.label7.TabIndex = 5;
+            this.label7.Text = "Rear Bump";
+            // 
+            // lblRebFrontRes
+            // 
+            this.lblRebFrontRes.AutoSize = true;
+            this.lblRebFrontRes.Location = new System.Drawing.Point(6, 16);
+            this.lblRebFrontRes.Name = "lblRebFrontRes";
+            this.lblRebFrontRes.Size = new System.Drawing.Size(78, 13);
+            this.lblRebFrontRes.TabIndex = 4;
+            this.lblRebFrontRes.Text = "Front Rebound";
+            // 
+            // lblRebFront
+            // 
+            this.lblRebFront.AutoSize = true;
+            this.lblRebFront.Location = new System.Drawing.Point(6, 37);
+            this.lblRebFront.Name = "lblRebFront";
+            this.lblRebFront.Size = new System.Drawing.Size(77, 13);
+            this.lblRebFront.TabIndex = 3;
+            this.lblRebFront.Text = "Rear Rebound";
+            // 
             // gbSpringsRes
             // 
             this.gbSpringsRes.Controls.Add(this.label6);
             this.gbSpringsRes.Controls.Add(this.label8);
+            this.gbSpringsRes.Controls.Add(this.rearSpringVar);
+            this.gbSpringsRes.Controls.Add(this.frontSpringVar);
             this.gbSpringsRes.Controls.Add(this.resSpringRear);
             this.gbSpringsRes.Controls.Add(this.resSpringFront);
-            this.gbSpringsRes.Location = new System.Drawing.Point(6, 126);
+            this.gbSpringsRes.Location = new System.Drawing.Point(6, 183);
             this.gbSpringsRes.Name = "gbSpringsRes";
-            this.gbSpringsRes.Size = new System.Drawing.Size(172, 63);
+            this.gbSpringsRes.Size = new System.Drawing.Size(271, 63);
             this.gbSpringsRes.TabIndex = 6;
             this.gbSpringsRes.TabStop = false;
             this.gbSpringsRes.Text = "Springs";
@@ -517,101 +577,119 @@
             this.label8.TabIndex = 3;
             this.label8.Text = "Rear Stiffness";
             // 
-            // gbDampingRes
+            // rearArbVar
             // 
-            this.gbDampingRes.Controls.Add(this.label9);
-            this.gbDampingRes.Controls.Add(this.label7);
-            this.gbDampingRes.Controls.Add(this.lblRebFrontRes);
-            this.gbDampingRes.Controls.Add(this.lblRebFront);
-            this.gbDampingRes.Controls.Add(this.resBumpRear);
-            this.gbDampingRes.Controls.Add(this.resBumpFront);
-            this.gbDampingRes.Controls.Add(this.resRebFront);
-            this.gbDampingRes.Controls.Add(this.resRebRear);
-            this.gbDampingRes.Location = new System.Drawing.Point(6, 17);
-            this.gbDampingRes.Name = "gbDampingRes";
-            this.gbDampingRes.Size = new System.Drawing.Size(172, 103);
-            this.gbDampingRes.TabIndex = 5;
-            this.gbDampingRes.TabStop = false;
-            this.gbDampingRes.Text = "Damping";
+            this.rearArbVar.AutoSize = true;
+            this.rearArbVar.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rearArbVar.ForeColor = System.Drawing.Color.Orange;
+            this.rearArbVar.Location = new System.Drawing.Point(189, 33);
+            this.rearArbVar.Name = "rearArbVar";
+            this.rearArbVar.Size = new System.Drawing.Size(52, 18);
+            this.rearArbVar.TabIndex = 11;
+            this.rearArbVar.Text = "label1";
+            this.rearArbVar.Visible = false;
+            this.rearArbVar.Click += new System.EventHandler(this.rearArbVar_Click);
             // 
-            // label9
+            // frontArbVar
             // 
-            this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(6, 53);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(61, 13);
-            this.label9.TabIndex = 6;
-            this.label9.Text = "Front Bump";
+            this.frontArbVar.AutoSize = true;
+            this.frontArbVar.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.frontArbVar.ForeColor = System.Drawing.Color.Orange;
+            this.frontArbVar.Location = new System.Drawing.Point(189, 11);
+            this.frontArbVar.Name = "frontArbVar";
+            this.frontArbVar.Size = new System.Drawing.Size(52, 18);
+            this.frontArbVar.TabIndex = 12;
+            this.frontArbVar.Text = "label1";
+            this.frontArbVar.Visible = false;
+            this.frontArbVar.Click += new System.EventHandler(this.frontArbVar_Click);
             // 
-            // label7
+            // rearSpringVar
             // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(6, 73);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(60, 13);
-            this.label7.TabIndex = 5;
-            this.label7.Text = "Rear Bump";
+            this.rearSpringVar.AutoSize = true;
+            this.rearSpringVar.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rearSpringVar.ForeColor = System.Drawing.Color.Orange;
+            this.rearSpringVar.Location = new System.Drawing.Point(189, 36);
+            this.rearSpringVar.Name = "rearSpringVar";
+            this.rearSpringVar.Size = new System.Drawing.Size(52, 18);
+            this.rearSpringVar.TabIndex = 13;
+            this.rearSpringVar.Text = "label1";
+            this.rearSpringVar.Visible = false;
+            this.rearSpringVar.Click += new System.EventHandler(this.rearSpringVar_Click);
             // 
-            // lblRebFrontRes
+            // frontSpringVar
             // 
-            this.lblRebFrontRes.AutoSize = true;
-            this.lblRebFrontRes.Location = new System.Drawing.Point(6, 16);
-            this.lblRebFrontRes.Name = "lblRebFrontRes";
-            this.lblRebFrontRes.Size = new System.Drawing.Size(78, 13);
-            this.lblRebFrontRes.TabIndex = 4;
-            this.lblRebFrontRes.Text = "Front Rebound";
+            this.frontSpringVar.AutoSize = true;
+            this.frontSpringVar.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.frontSpringVar.ForeColor = System.Drawing.Color.Orange;
+            this.frontSpringVar.Location = new System.Drawing.Point(189, 12);
+            this.frontSpringVar.Name = "frontSpringVar";
+            this.frontSpringVar.Size = new System.Drawing.Size(52, 18);
+            this.frontSpringVar.TabIndex = 14;
+            this.frontSpringVar.Text = "label1";
+            this.frontSpringVar.Visible = false;
+            this.frontSpringVar.Click += new System.EventHandler(this.frontSpringVar_Click);
             // 
-            // lblRebFront
+            // resBumpRear63
             // 
-            this.lblRebFront.AutoSize = true;
-            this.lblRebFront.Location = new System.Drawing.Point(6, 33);
-            this.lblRebFront.Name = "lblRebFront";
-            this.lblRebFront.Size = new System.Drawing.Size(77, 13);
-            this.lblRebFront.TabIndex = 3;
-            this.lblRebFront.Text = "Rear Rebound";
+            this.resBumpRear63.AutoSize = true;
+            this.resBumpRear63.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.resBumpRear63.ForeColor = System.Drawing.Color.SeaGreen;
+            this.resBumpRear63.Location = new System.Drawing.Point(217, 89);
+            this.resBumpRear63.Name = "resBumpRear63";
+            this.resBumpRear63.Size = new System.Drawing.Size(52, 17);
+            this.resBumpRear63.TabIndex = 15;
+            this.resBumpRear63.Text = "label1";
+            this.resBumpRear63.Visible = false;
+            this.resBumpRear63.Click += new System.EventHandler(this.resBumpRear63_Click);
             // 
-            // gbCalculated
+            // resBumpFront63
             // 
-            this.gbCalculated.Controls.Add(this.gbResArb);
-            this.gbCalculated.Controls.Add(this.gbDampingRes);
-            this.gbCalculated.Controls.Add(this.btnTune);
-            this.gbCalculated.Controls.Add(this.gbSpringsRes);
-            this.gbCalculated.Location = new System.Drawing.Point(6, 19);
-            this.gbCalculated.Name = "gbCalculated";
-            this.gbCalculated.Size = new System.Drawing.Size(184, 318);
-            this.gbCalculated.TabIndex = 14;
-            this.gbCalculated.TabStop = false;
-            this.gbCalculated.Text = "Calculated";
+            this.resBumpFront63.AutoSize = true;
+            this.resBumpFront63.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.resBumpFront63.ForeColor = System.Drawing.Color.SeaGreen;
+            this.resBumpFront63.Location = new System.Drawing.Point(217, 58);
+            this.resBumpFront63.Name = "resBumpFront63";
+            this.resBumpFront63.Size = new System.Drawing.Size(52, 17);
+            this.resBumpFront63.TabIndex = 16;
+            this.resBumpFront63.Text = "label1";
+            this.resBumpFront63.Visible = false;
+            this.resBumpFront63.Click += new System.EventHandler(this.resBumpFront63_Click);
             // 
-            // gbAdvisories
+            // resBumpFront75
             // 
-            this.gbAdvisories.Controls.Add(this.label10);
-            this.gbAdvisories.Controls.Add(this.label5);
-            this.gbAdvisories.Location = new System.Drawing.Point(197, 20);
-            this.gbAdvisories.Name = "gbAdvisories";
-            this.gbAdvisories.Size = new System.Drawing.Size(283, 317);
-            this.gbAdvisories.TabIndex = 15;
-            this.gbAdvisories.TabStop = false;
-            this.gbAdvisories.Text = "Advisories";
+            this.resBumpFront75.AutoSize = true;
+            this.resBumpFront75.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.resBumpFront75.ForeColor = System.Drawing.Color.SeaGreen;
+            this.resBumpFront75.Location = new System.Drawing.Point(346, 58);
+            this.resBumpFront75.Name = "resBumpFront75";
+            this.resBumpFront75.Size = new System.Drawing.Size(52, 17);
+            this.resBumpFront75.TabIndex = 17;
+            this.resBumpFront75.Text = "label1";
+            this.resBumpFront75.Visible = false;
+            this.resBumpFront75.Click += new System.EventHandler(this.resBumpFront75_Click);
+            // 
+            // resBumpRear75
+            // 
+            this.resBumpRear75.AutoSize = true;
+            this.resBumpRear75.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.resBumpRear75.ForeColor = System.Drawing.Color.SeaGreen;
+            this.resBumpRear75.Location = new System.Drawing.Point(346, 89);
+            this.resBumpRear75.Name = "resBumpRear75";
+            this.resBumpRear75.Size = new System.Drawing.Size(52, 17);
+            this.resBumpRear75.TabIndex = 18;
+            this.resBumpRear75.Text = "label1";
+            this.resBumpRear75.Visible = false;
+            this.resBumpRear75.Click += new System.EventHandler(this.resBumpRear75_Click);
             // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(6, 16);
+            this.label5.Location = new System.Drawing.Point(12, 16);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(202, 26);
-            this.label5.TabIndex = 0;
-            this.label5.Text = "All calculated settings are a starting point.\r\nFine tuning is recommended.";
-            // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.label10.Location = new System.Drawing.Point(7, 53);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(271, 234);
-            this.label10.TabIndex = 1;
-            this.label10.Text = resources.GetString("label10.Text");
+            this.label5.Size = new System.Drawing.Size(360, 26);
+            this.label5.TabIndex = 14;
+            this.label5.Text = "Starting points for base tune. Orange values are minimum change values to\r\nnotice" +
+    " a difference.";
             // 
             // ForzaTuningCalc
             // 
@@ -635,15 +713,14 @@
             this.gbArbs.ResumeLayout(false);
             this.gbArbs.PerformLayout();
             this.gbResults.ResumeLayout(false);
+            this.gbCalculated.ResumeLayout(false);
+            this.gbCalculated.PerformLayout();
             this.gbResArb.ResumeLayout(false);
             this.gbResArb.PerformLayout();
-            this.gbSpringsRes.ResumeLayout(false);
-            this.gbSpringsRes.PerformLayout();
             this.gbDampingRes.ResumeLayout(false);
             this.gbDampingRes.PerformLayout();
-            this.gbCalculated.ResumeLayout(false);
-            this.gbAdvisories.ResumeLayout(false);
-            this.gbAdvisories.PerformLayout();
+            this.gbSpringsRes.ResumeLayout(false);
+            this.gbSpringsRes.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -652,8 +729,6 @@
 
         private System.Windows.Forms.Label lblFrontWeight;
         private System.Windows.Forms.TextBox txtFrontWeight;
-        private System.Windows.Forms.TextBox txtWeight;
-        private System.Windows.Forms.Label lblWeight;
         private System.Windows.Forms.GroupBox gbWeight;
         private System.Windows.Forms.GroupBox gbDamping;
         private System.Windows.Forms.TextBox txtRebMax;
@@ -666,8 +741,8 @@
         private System.Windows.Forms.Button btnTune;
         private System.Windows.Forms.Label resRebFront;
         private System.Windows.Forms.Label resRebRear;
-        private System.Windows.Forms.Label resBumpRear;
-        private System.Windows.Forms.Label resBumpFront;
+        private System.Windows.Forms.Label resBumpRear50;
+        private System.Windows.Forms.Label resBumpFront50;
         private System.Windows.Forms.Label resSpringRear;
         private System.Windows.Forms.Label resSpringFront;
         private System.Windows.Forms.Label label3;
@@ -695,10 +770,16 @@
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.Label resRearArb;
         private System.Windows.Forms.Label resFrontArb;
-        private System.Windows.Forms.GroupBox gbAdvisories;
-        private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.Label label5;
         private System.Windows.Forms.GroupBox gbCalculated;
+        private System.Windows.Forms.Label rearArbVar;
+        private System.Windows.Forms.Label frontArbVar;
+        private System.Windows.Forms.Label resBumpRear75;
+        private System.Windows.Forms.Label resBumpFront75;
+        private System.Windows.Forms.Label resBumpFront63;
+        private System.Windows.Forms.Label resBumpRear63;
+        private System.Windows.Forms.Label rearSpringVar;
+        private System.Windows.Forms.Label frontSpringVar;
+        private System.Windows.Forms.Label label5;
     }
 }
 

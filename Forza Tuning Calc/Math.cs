@@ -32,6 +32,9 @@ namespace Forza_Tuning_Calculator
 
             result.Front = ((frontMax - frontMin) * FrontWeightMulti) + frontMin;
             result.Rear = ((rearMax - rearMin) * RearWeightMulti) + frontMin;
+
+            result.FrontVar = (result.Front / 4) / 3;
+            result.RearVar = (result.Rear / 4) / 3;
         }
 
         private static SpringStiffness CalculateSpringRate(UserInput input)
@@ -46,6 +49,9 @@ namespace Forza_Tuning_Calculator
 
             result.Front = ((frontMax - frontMin) * FrontWeightMulti) + frontMin;
             result.Rear = ((rearMax - rearMin) * RearWeightMulti) + frontMin;
+
+            result.FrontVar = (result.Front / 4) / 3;
+            result.RearVar = (result.Rear / 4) / 3;
 
             return result;
         }
@@ -67,8 +73,13 @@ namespace Forza_Tuning_Calculator
         {
             var bumpResult = new BumpResult();
 
-            bumpResult.Front = input.Front * 0.60;
-            bumpResult.Rear = input.Rear * 0.60;
+            bumpResult.Front50 = input.Front * 0.50;
+            bumpResult.Front63 = input.Front * 0.63;
+            bumpResult.Front75 = input.Front * 0.75;
+
+            bumpResult.Rear50 = input.Rear * 0.50;
+            bumpResult.Rear63 = input.Rear * 0.63;
+            bumpResult.Rear75 = input.Rear * 0.75;
 
             return bumpResult;
         }

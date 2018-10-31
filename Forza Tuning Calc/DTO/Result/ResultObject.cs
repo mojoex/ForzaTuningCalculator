@@ -13,7 +13,11 @@
     {
         public double Front;
 
+        public double FrontVar;
+
         public double Rear;
+
+        public double RearVar;
     }
 
     public class SpringsResult
@@ -25,7 +29,11 @@
     {
         public double Front;
 
+        public double FrontVar;
+
         public double Rear;
+
+        public double RearVar;
     }
 
     public class DampingResult
@@ -44,8 +52,16 @@
 
     public class BumpResult
     {
-        public double Front;
+        public double Front50;
 
-        public double Rear;
+        public double Front63;
+
+        public double Front75;
+
+        public double Rear50;
+
+        public double Rear63;
+
+        public double Rear75;
     }
 }

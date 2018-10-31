@@ -117,24 +117,4 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="label10.Text" xml:space="preserve">
-    <value>Tyre Pressure: 28psi
-
-Aero: Max rear, front between 50-70%
-
-Alignment: when all other settings are tuned, this
-will require lots of testing. Use the telemetry to
-inspect the camber when taking corners at low and
-high speeds.
-You will want the outer wheel when turning to bounce
-around 0 degree camber, ensuring maximum contact
-patch. Then ensure temps are even throughout the tyre.
-
-Differential: varies depending on the drivetrain setup.
-AWD: Generally, favour an open diff on the front with 
-low decel.
-A tighter diff on the rear with rear bias.
-RWD: Generally favour an open diff between 40-60%.
-Tuning the differential heavily ties in with gear ratios.</value>
-  </data>
 </root>
