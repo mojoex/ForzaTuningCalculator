@@ -25,5 +25,18 @@ namespace Forza_Tuning_Calculator
 
             return result;
         }
+
+        public void FineTuneOverallStiffness(ResultObject result, string method)
+        {
+            switch (method)
+            {
+                case FineTuneConstants.Soften:
+                    FineTuning.AdjustOverallStiffness(result, false);
+                    break;
+                case FineTuneConstants.Stiffen:
+                    FineTuning.AdjustOverallStiffness(result, true);
+                    break;
+            }
+        }
     }
 }

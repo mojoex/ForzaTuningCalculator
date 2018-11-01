@@ -9,6 +9,7 @@ namespace Forza_Tuning_Calculator
     public partial class ForzaTuningCalc : Form
     {
         private Utils _utils;
+        private ResultObject _result;
 
         public ForzaTuningCalc()
         {
@@ -16,25 +17,10 @@ namespace Forza_Tuning_Calculator
             _utils = new Utils(this);
         }
 
-        private void label1_Click(object sender, EventArgs e)
+        private void SetTuningStages(ResultObject result)
         {
-
-        }
-
-        private void lblRebound_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void btnTune_Click(object sender, EventArgs e)
-        {
-            var input = GetUserInput();
-
-            var result = _utils.PerformCalculations(input);
-
-            SetResult(result);
-
-            SetResultVisible();
+            ftOvrSoftStage.Text = "Stage: " + result.Springs.SpringRate.FrontStage;
+            ftOvrStiffStage.Text = "Stage: " + result.Springs.SpringRate.FrontStage;
         }
 
         private void SetResult(ResultObject result)
@@ -81,6 +67,59 @@ namespace Forza_Tuning_Calculator
             resFrontArb.Visible = true;
             frontArbVar.Visible = true;
             rearArbVar.Visible = true;
+        }
+        private void btnTune_Click(object sender, EventArgs e)
+        {
+            //if (_result != null)
+            //{
+            //    ResetFineTuneStages();
+            //}
+
+            var input = GetUserInput();
+
+            var result = _utils.PerformCalculations(input);
+
+            result.BaseComplete = true;
+
+            _result = result;
+
+            SetResult(result);
+
+            SetResultVisible();
+        }
+
+        private void ResetFineTuneStages()
+        {
+            throw new NotImplementedException();
+        }
+
+        public UserInput GetUserInput()
+        {
+            var result = new UserInput();
+
+            result.Weight.FrontWeight = Int32.Parse(txtFrontWeight.Text);
+            result.Damping.ReboundMin = float.Parse(txtRebMin.Text);
+            result.Damping.ReboundMax = float.Parse(txtRebMax.Text);
+            result.Springs.FrontMin = float.Parse(txtFrontSpringMin.Text);
+            result.Springs.FrontMax = float.Parse(txtFrontSpringMax.Text);
+            result.Springs.RearMin = result.Springs.FrontMin;
+            result.Springs.RearMax = result.Springs.FrontMax;
+            result.ARBs.FrontMin = float.Parse(txtFrontArbMin.Text);
+            result.ARBs.FrontMax = float.Parse(txtFrontArbMax.Text);
+            result.ARBs.RearMin = result.ARBs.FrontMin;
+            result.ARBs.RearMax = result.ARBs.FrontMax;
+
+            return result;
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lblRebound_Click(object sender, EventArgs e)
+        {
+
         }
 
         private void resRebFront_Click(object sender, EventArgs e)
@@ -163,25 +202,6 @@ namespace Forza_Tuning_Calculator
 
         }
 
-        public UserInput GetUserInput()
-        {
-            var result = new UserInput();
-
-            result.Weight.FrontWeight = Int32.Parse(txtFrontWeight.Text);
-            result.Damping.ReboundMin = float.Parse(txtRebMin.Text);
-            result.Damping.ReboundMax = float.Parse(txtRebMax.Text);
-            result.Springs.FrontMin = float.Parse(txtFrontSpringMin.Text);
-            result.Springs.FrontMax = float.Parse(txtFrontSpringMax.Text);
-            result.Springs.RearMin = result.Springs.FrontMin;
-            result.Springs.RearMax = result.Springs.FrontMax;
-            result.ARBs.FrontMin = float.Parse(txtFrontArbMin.Text);
-            result.ARBs.FrontMax = float.Parse(txtFrontArbMax.Text);
-            result.ARBs.RearMin = result.ARBs.FrontMin;
-            result.ARBs.RearMax = result.ARBs.FrontMax;
-
-            return result;
-        }
-
         private void txtFrontArbMin_TextChanged(object sender, EventArgs e)
         {
 
@@ -250,6 +270,45 @@ namespace Forza_Tuning_Calculator
         private void rearArbVar_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void lblFrontSpring_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label5_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label21_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void ftuOvrSoft_Click(object sender, EventArgs e)
+        {
+            if (_result != null && _result.BaseComplete)
+            {
+                _utils.FineTuneOverallStiffness(_result, FineTuneConstants.Soften);
+
+                SetResult(_result);
+
+                SetTuningStages(_result);
+            }
+        }
+
+        private void ftuOvrStiff_Click(object sender, EventArgs e)
+        {
+            if (_result != null && _result.BaseComplete)
+            {
+                _utils.FineTuneOverallStiffness(_result, FineTuneConstants.Stiffen);
+
+                SetResult(_result);
+
+                SetTuningStages(_result);
+            }
         }
     }
 }

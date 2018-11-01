@@ -7,15 +7,25 @@
         public SpringsResult Springs = new SpringsResult();
 
         public ArbResult ARBs = new ArbResult();
+
+        public bool BaseComplete;
     }
 
     public class ArbResult
     {
         public double Front;
 
+        public double FtFront;
+
         public double FrontVar;
 
+        public int FrontStage;
+
         public double Rear;
+
+        public double FtRear;
+
+        public int RearStage;
 
         public double RearVar;
     }
@@ -29,11 +39,19 @@
     {
         public double Front;
 
+        public double FtFront;
+
         public double FrontVar;
+
+        public int FrontStage;
 
         public double Rear;
 
+        public double FtRear;
+
         public double RearVar;
+
+        public int RearStage;
     }
 
     public class DampingResult
