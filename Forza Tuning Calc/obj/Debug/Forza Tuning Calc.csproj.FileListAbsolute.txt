@@ -11,7 +11,6 @@ D:\Development\TuningCalc\Forza Tuning Calc\Forza Tuning Calc\bin\Debug\Forza Tu
 D:\Development\TuningCalc\Forza Tuning Calc\Forza Tuning Calc\bin\Debug\Forza Tuning Calc.application
 D:\Development\TuningCalc\Forza Tuning Calc\Forza Tuning Calc\obj\Debug\Forza Tuning Calc.exe.manifest
 D:\Development\TuningCalc\Forza Tuning Calc\Forza Tuning Calc\obj\Debug\Forza Tuning Calc.application
-D:\Development\ForzaTuningCalculator\Forza Tuning Calc\obj\Debug\Forza Tuning Calc.csprojAssemblyReference.cache
 D:\Development\ForzaTuningCalculator\Forza Tuning Calc\obj\Debug\Forza Tuning Calc.csproj.GenerateResource.cache
 D:\Development\ForzaTuningCalculator\Forza Tuning Calc\obj\Debug\Forza Tuning Calc.csproj.CoreCompileInputs.cache
 D:\Development\ForzaTuningCalculator\Forza Tuning Calc\obj\Debug\Forza_Tuning_Calculator.ForzaTuningCalc.resources

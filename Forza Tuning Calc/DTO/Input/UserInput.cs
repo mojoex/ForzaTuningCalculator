@@ -2,18 +2,24 @@
 {
     public class UserInput
     {
+        public bool WeightBasedTune;
+
+        public string Drivetrain;
+
         public WeightInput Weight = new WeightInput();
 
         public DampingInput Damping = new DampingInput();
 
         public SpringsInput Springs = new SpringsInput();
 
-        public ArbInput ARBs = new ArbInput();
+        public ArbInput ARB = new ArbInput();
     }
 
     public class WeightInput
     {
-        public int Weight;
+        public int WeightKg;
+
+        public double WeightLb;
 
         public float FrontWeight;
     }
@@ -27,23 +33,15 @@
 
     public class SpringsInput
     {
-        public float FrontMin;
+        public float Min;
 
-        public float FrontMax;
-
-        public float RearMin;
-
-        public float RearMax;
+        public float Max;
     }
 
     public class ArbInput
     {
-        public float FrontMin;
+        public float Min;
 
-        public float FrontMax;
-
-        public float RearMin;
-
-        public float RearMax;
+        public float Max;
     }
 }
