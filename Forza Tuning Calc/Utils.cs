@@ -1,4 +1,6 @@
-﻿using Forza_Tuning_Calculator.DTO.Input;
+﻿using Forza_Tuning_Calculator.DTO;
+using Forza_Tuning_Calculator.DTO.Constants;
+using Forza_Tuning_Calculator.DTO.Input;
 using Forza_Tuning_Calculator.DTO.Result;
 using System.Windows.Forms;
 
@@ -47,6 +49,34 @@ namespace Forza_Tuning_Calculator
             _calculate.CalculateDamping(baseTune, input);
 
             _calculate.CalculateArbs(baseTune, input);
+
+            baseTune.Aero.Front.StringifyValue(baseTune, AeroConstants.DownforceTitle, FineTuneConstants.Front);
+            baseTune.Aero.Rear.StringifyValue(baseTune, AeroConstants.DownforceTitle, FineTuneConstants.Rear);
+
+            baseTune.Suspension.Springs.RideHeight.Front.StringifyValue(baseTune, SuspensionConstants.RideHeightTitle, FineTuneConstants.Front);
+            baseTune.Suspension.Springs.RideHeight.Rear.StringifyValue(baseTune, SuspensionConstants.RideHeightTitle, FineTuneConstants.Rear);
+
+            SetDiffSettings(baseTune);
+        }
+
+        private void SetDiffSettings(BaseTune baseTune)
+        {
+            var drivetrain = baseTune.Drivetrain;
+
+            var data = new DataConstants();
+
+            switch (drivetrain)
+            {
+                case StringConstants.AWD:
+                    baseTune.Diff = data.AWDDiff;
+                    break;
+                case StringConstants.RWD:
+                    baseTune.Diff = data.RWDDiff;
+                    break;
+                case StringConstants.FWD:
+                    baseTune.Diff = data.FWDDiff;
+                    break;
+            }
         }
 
         public void FineTuneOverallStiffness(FineTune fineTune, string method)

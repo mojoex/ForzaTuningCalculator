@@ -8,8 +8,8 @@
 
         public double ToeRear = 0.0;
 
-        public double CamberFront = 0.0;
+        public double CamberFront = -1.0;
 
-        public double CamberRear = 0.0;
+        public double CamberRear = -0.5;
     }
 }

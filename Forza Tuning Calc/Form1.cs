@@ -4,6 +4,7 @@ using Forza_Tuning_Calculator.DTO.Input;
 using Forza_Tuning_Calculator.DTO.Result;
 using System;
 using System.Collections.Generic;
+using System.Drawing;
 using System.Windows.Forms;
 using static System.Windows.Forms.ListViewItem;
 
@@ -16,11 +17,20 @@ namespace Forza_Tuning_Calculator
         private BaseTune _base;
         private FineTune _fineTune;
 
+        int windowHeight;
+
+        bool baseComplete = false;
+
         public ForzaTuningCalc()
         {
             InitializeComponent();
             PopulateDataSources();
             _utils = new Utils();
+
+            windowHeight = this.Height;
+
+            this.MinimumSize = new Size(this.Width, this.Height - gbFineTuning.Size.Height);
+            this.Height = windowHeight - gbFineTuning.Size.Height;
         }
 
         private void PopulateDataSources()
@@ -45,13 +55,11 @@ namespace Forza_Tuning_Calculator
 
                 _utils.BaseTuneCalculations(baseTune, input);
 
-                _base = baseTune;
-
                 SetResult(baseTune);
 
                 SetResultVisible();
 
-                baseTune.BaseComplete = true;
+                _base = baseTune;
             }
         }
 
@@ -59,33 +67,16 @@ namespace Forza_Tuning_Calculator
         {
             foreach (ListViewItem item in resultsList.Items)
             {
-                if (result.BaseComplete)
+                if (_base != null && _base != result)
                 {
-                    item.SubItems.Clear();
+                    while (item.SubItems.Count > 1)
+                    {
+                        item.SubItems.RemoveAt(1);
+                    }
                 }
 
                 item.SubItems.AddRange(AddSubItemData(item.Text, result));
             }
-
-            //resBumpFront50.Text = "Soft: " + result.Suspension.Damping.Bump.Front50.ToString("n2");
-            //resBumpRear50.Text = "Soft: " + result.Damping.Bump.Rear50.ToString("n2");
-            //resBumpFront63.Text = "Medium: " + result.Damping.Bump.Front63.ToString("n2");
-            //resBumpRear63.Text = "Medium: " + result.Damping.Bump.Rear63.ToString("n2");
-            //resBumpFront75.Text = "Stiff: " + result.Damping.Bump.Front75.ToString("n2");
-            //resBumpRear75.Text = "Stiff: " + result.Damping.Bump.Rear75.ToString("n2");
-
-            //resRebFront.Text = result.Damping.Rebound.Front.ToString("n2");
-            //resRebRear.Text = result.Damping.Rebound.Rear.ToString("n2");
-
-            //resSpringFront.Text = result.Springs.SpringRate.Front.ToString("n2");
-            //resSpringRear.Text = result.Springs.SpringRate.Rear.ToString("n2");
-            //frontSpringVar.Text = "+/-" + result.Springs.SpringRate.FrontVar.ToString("n2");
-            //rearSpringVar.Text = "+/-" + result.Springs.SpringRate.RearVar.ToString("n2");
-
-            //resFrontArb.Text = result.ARB.Front.ToString("n2");
-            //resRearArb.Text = result.ARB.Rear.ToString("n2");
-            //frontArbVar.Text = "+/-" + result.ARB.FrontVar.ToString("n2");
-            //rearArbVar.Text = "+/-" + result.ARB.RearVar.ToString("n2");
         }
 
         private ListViewSubItem[] AddSubItemData(string source, BaseTune result)
@@ -94,9 +85,15 @@ namespace Forza_Tuning_Calculator
 
             switch (source)
             {
-                case SuspensionConstants.SpringRates:
+                // Suspension
+                case SuspensionConstants.SpringRatesTitle:
                     list.Add(CreateSubItem(SuspensionConstants.FrontSpringRate, result.Suspension.Springs.SpringRate.Front));
                     list.Add(CreateSubItem(SuspensionConstants.RearSpringRate, result.Suspension.Springs.SpringRate.Rear));
+                    break;
+
+                case SuspensionConstants.RideHeightTitle:
+                    list.Add(CreateStringSubItem(SuspensionConstants.FrontRideHeight, result.Suspension.Springs.RideHeight.StringFront));
+                    list.Add(CreateStringSubItem(SuspensionConstants.RearRideHeight, result.Suspension.Springs.RideHeight.StringRear));
                     break;
 
                 case SuspensionConstants.Rebound:
@@ -109,9 +106,52 @@ namespace Forza_Tuning_Calculator
                     list.Add(CreateSubItem(SuspensionConstants.BumpRear, result.Suspension.Damping.Bump.Rear50));
                     break;
 
+                // ARB
                 case ArbConstants.ARB:
                     list.Add(CreateSubItem(ArbConstants.ArbFront, result.ARB.Front));
                     list.Add(CreateSubItem(ArbConstants.ArbRear, result.ARB.Rear));
+                    break;
+
+                // Alignment
+                case AlignmentConstants.CamberTitle:
+                    list.Add(CreateSubItem(AlignmentConstants.FrontCamber, result.Alignment.CamberFront));
+                    list.Add(CreateSubItem(AlignmentConstants.RearCamber, result.Alignment.CamberRear));
+                    break;
+
+                case AlignmentConstants.Castor:
+                    list.Add(CreateSubItem(AlignmentConstants.Castor, result.Alignment.CastorAngle));
+                    break;
+
+                case AlignmentConstants.ToeTitle:
+                    list.Add(CreateSubItem(AlignmentConstants.FrontToe, result.Alignment.ToeFront));
+                    list.Add(CreateSubItem(AlignmentConstants.RearToe, result.Alignment.ToeRear));
+                    break;
+
+                // Diff
+                case DifferentialConstants.AccelTitle:
+                    list.Add(CreateSubItem(DifferentialConstants.FrontAccel, result.Diff.FrontAccel));
+                    list.Add(CreateSubItem(DifferentialConstants.RearAccel, result.Diff.RearAccel));
+                    break;
+
+                case DifferentialConstants.DecelTitle:
+                    list.Add(CreateSubItem(DifferentialConstants.FrontDecel, result.Diff.FrontDecel));
+                    list.Add(CreateSubItem(DifferentialConstants.RearDecel, result.Diff.RearDecel));
+                    break;
+
+                case DifferentialConstants.DiffBias:
+                    list.Add(CreateSubItem(DifferentialConstants.DiffBias, result.Diff.Bias));
+                    break;
+
+                // Tyres
+                case TyrePressureConstants.PressureTitle:
+                    list.Add(CreateSubItem(TyrePressureConstants.FrontPressure, result.TyrePressure.FrontPsi));
+                    list.Add(CreateSubItem(TyrePressureConstants.RearPressure, result.TyrePressure.RearPsi));
+                    break;
+
+                // Aero
+                case AeroConstants.DownforceTitle:
+                    list.Add(CreateStringSubItem(AeroConstants.FrontAero, result.Aero.StringFront));
+                    list.Add(CreateStringSubItem(AeroConstants.RearAero, result.Aero.StringRear));
                     break;
             }
 
@@ -123,7 +163,18 @@ namespace Forza_Tuning_Calculator
             var result = new ListViewSubItem()
             {
                 Name = name,
-                Text = value.ToString("n2")
+                Text = value != -99 ? value.ToString("n2") : "n/a"
+            };
+
+            return result;
+        }
+
+        private ListViewSubItem CreateStringSubItem(string name, string value)
+        {
+            var result = new ListViewSubItem()
+            {
+                Name = name,
+                Text = value
             };
 
             return result;
@@ -196,6 +247,12 @@ namespace Forza_Tuning_Calculator
 
         private bool CheckUserInput()
         {
+            if (string.IsNullOrEmpty(inputFrontWeight.Text))
+            {
+                _utils.ShowError("Front Weight %");
+                return false;
+            }
+
             if (string.IsNullOrEmpty(cmbDrivetrain.SelectedItem.ToString()))
             {
                 _utils.ShowError(StringConstants.Drivetrain);
@@ -266,6 +323,8 @@ namespace Forza_Tuning_Calculator
 
             result.ARB.Min = float.Parse(inputArbMin.Text);
             result.ARB.Max = float.Parse(inputArbMax.Text);
+
+            result.Drivetrain = cmbDrivetrain.SelectedItem.ToString();
 
             return result;
         }
@@ -543,6 +602,27 @@ namespace Forza_Tuning_Calculator
         private void resultsList_SelectedIndexChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void gbFineTuning_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void chkFineTuning_CheckedChanged(object sender, EventArgs e)
+        {
+            switch (chkFineTuning.CheckState)
+            {
+                case CheckState.Checked:
+                    gbFineTuning.Visible = true;
+                    this.Height = windowHeight;
+                    break;
+
+                case CheckState.Unchecked:
+                    gbFineTuning.Visible = false;
+                    this.Height = windowHeight - gbFineTuning.Size.Height;
+                    break;
+            }
         }
     }
 }

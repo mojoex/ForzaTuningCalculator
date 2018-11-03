@@ -16,9 +16,13 @@
 
     public class RideHeight
     {
-        public double Front = 3;
+        public int Front = 3;
 
-        public double Rear = 3;
+        public string StringFront;
+
+        public int Rear = 3;
+
+        public string StringRear;
     }
 
     public class SpringRate

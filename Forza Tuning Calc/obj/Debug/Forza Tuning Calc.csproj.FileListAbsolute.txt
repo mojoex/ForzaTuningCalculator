@@ -38,3 +38,4 @@ W:\Personal Development\ForzaTuneCalculator\Forza Tuning Calc\obj\Debug\Forza Tu
 W:\Personal Development\ForzaTuneCalculator\Forza Tuning Calc\obj\Debug\Forza Tune Calculator.application
 W:\Personal Development\ForzaTuneCalculator\Forza Tuning Calc\obj\Debug\Forza Tune Calculator.exe
 W:\Personal Development\ForzaTuneCalculator\Forza Tuning Calc\obj\Debug\Forza Tune Calculator.pdb
+D:\Development\ForzaTuningCalculator\Forza Tuning Calc\obj\Debug\Forza Tuning Calc.csprojAssemblyReference.cache

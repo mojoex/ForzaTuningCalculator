@@ -25,7 +25,11 @@
     {
         public int Front = 50;
 
+        public string StringFront;
+
         public int Rear = 50;
+
+        public string StringRear;
     }
 
     public class DifferentialResult
@@ -38,7 +42,7 @@
 
         public int RearDecel;
 
-        public int Balance;
+        public int Bias;
     }
 
     public class GearingResult
