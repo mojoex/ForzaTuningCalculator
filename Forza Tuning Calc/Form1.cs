@@ -4,7 +4,6 @@ using Forza_Tuning_Calculator.DTO.Input;
 using Forza_Tuning_Calculator.DTO.Result;
 using System;
 using System.Collections.Generic;
-using System.Drawing;
 using System.Windows.Forms;
 using static System.Windows.Forms.ListViewItem;
 
@@ -17,6 +16,8 @@ namespace Forza_Tuning_Calculator
         private BaseTune _base;
         private FineTune _fineTune;
 
+        private int chassisStiffness;
+
         int windowHeight;
 
         bool baseComplete = false;
@@ -26,11 +27,6 @@ namespace Forza_Tuning_Calculator
             InitializeComponent();
             PopulateDataSources();
             _utils = new Utils();
-
-            windowHeight = this.Height;
-
-            this.MinimumSize = new Size(this.Width, this.Height - gbFineTuning.Size.Height);
-            this.Height = windowHeight - gbFineTuning.Size.Height;
         }
 
         private void PopulateDataSources()
@@ -51,7 +47,7 @@ namespace Forza_Tuning_Calculator
             {
                 var input = GetUserInput();
 
-                var baseTune = _utils.BuildBaseTune(input);
+                var baseTune = _utils.BuildBaseTune(input, chassisStiffness);
 
                 _utils.BaseTuneCalculations(baseTune, input);
 
@@ -180,69 +176,9 @@ namespace Forza_Tuning_Calculator
             return result;
         }
 
-        private void SetTuningStages(FineTune fineTune)
-        {
-            //ftOvrSoftStage.Text = "Stage: " + result.Springs.SpringRate.FrontStage;
-            //ftOvrStiffStage.Text = "Stage: " + result.Springs.SpringRate.FrontStage;
-
-            //ftuExitStage.Text = "Stage: " + result.Damping.Rebound.FrontStage;
-        }
-
-        private void SetTuningResult(FineTune fineTune)
-        {
-            //if (result.Springs.SpringRate.FtFront != 0)
-            //{
-            //    resSpringFront.Text = result.Springs.SpringRate.FtFront.ToString("n2");
-            //}
-
-            //if (result.Springs.SpringRate.FtRear != 0)
-            //{
-            //    resSpringRear.Text = result.Springs.SpringRate.FtRear.ToString("n2");
-            //}
-
-            //if (result.ARB.FtFront != 0)
-            //{
-            //    resFrontArb.Text = result.ARB.FtFront.ToString("n2");
-            //}
-
-            //if (result.ARB.FtRear != 0)
-            //{
-            //    resRearArb.Text = result.ARB.FtRear.ToString("n2");
-            //}
-
-            //if (result.Damping.Rebound.FtFront != 0)
-            //{
-            //    resRebFront.Text = result.Damping.Rebound.FtFront.ToString("n2");
-            //}
-
-            //if (result.Damping.Rebound.FtRear != 0)
-            //{
-            //    resRebRear.Text = result.Damping.Rebound.FtRear.ToString("n2");
-            //}
-        }
-
         private void SetResultVisible()
         {
             resultsList.Refresh();
-            //resBumpFront50.Visible = true;
-            //resBumpRear50.Visible = true;
-            //resBumpFront63.Visible = true;
-            //resBumpRear63.Visible = true;
-            //resBumpFront75.Visible = true;
-            //resBumpRear75.Visible = true;
-
-            //resRebFront.Visible = true;
-            //resRebRear.Visible = true;
-
-            //resSpringFront.Visible = true;
-            //resSpringRear.Visible = true;
-            //frontSpringVar.Visible = true;
-            //rearSpringVar.Visible = true;
-
-            //resRearArb.Visible = true;
-            //resFrontArb.Visible = true;
-            //frontArbVar.Visible = true;
-            //rearArbVar.Visible = true;
         }
 
         private bool CheckUserInput()
@@ -271,20 +207,14 @@ namespace Forza_Tuning_Calculator
                 return false;
             }
 
+            if (string.IsNullOrEmpty(cmbStiffness.SelectedItem.ToString()))
+            {
+                _utils.ShowError("Chassis Stiffness");
+                return false;
+            }
+
             return true;
         }
-
-        //private void ResetFineTuneStages()
-        //{
-        //    _result.Springs.SpringRate.FrontStage = 0;
-        //    _result.Springs.SpringRate.RearStage = 0;
-
-        //    _result.ARB.FrontStage = 0;
-        //    _result.ARB.RearStage = 0;
-
-        //    _result.Damping.Rebound.FrontStage = 0;
-        //    _result.Damping.Rebound.RearStage = 0;
-        //}
 
         public UserInput GetUserInput()
         {
@@ -325,6 +255,22 @@ namespace Forza_Tuning_Calculator
             result.ARB.Max = float.Parse(inputArbMax.Text);
 
             result.Drivetrain = cmbDrivetrain.SelectedItem.ToString();
+
+            switch (cmbStiffness.SelectedItem.ToString())
+            {
+                case "Average":
+                    chassisStiffness = 0;
+                    break;
+                case "Stiff":
+                    chassisStiffness = 1;
+                    break;
+                case "Soft":
+                    chassisStiffness = -1;
+                    break;
+                case "Softest":
+                    chassisStiffness = -2;
+                    break;
+            }
 
             return result;
         }
@@ -504,56 +450,6 @@ namespace Forza_Tuning_Calculator
 
         }
 
-        private void ftuOvrSoft_Click(object sender, EventArgs e)
-        {
-            //if (_result != null && _result.BaseComplete)
-            //{
-            //    _utils.FineTuneOverallStiffness(_result, FineTuneConstants.Soften);
-
-            //    SetTuningResult(_result);
-
-            //    SetTuningStages(_result);
-            //}
-        }
-
-        private void ftuOvrStiff_Click(object sender, EventArgs e)
-        {
-            //if (_result != null && _result.BaseComplete)
-            //{
-            //    _utils.FineTuneOverallStiffness(_result, FineTuneConstants.Stiffen);
-
-            //    SetTuningResult(_result);
-
-            //    SetTuningStages(_result);
-            //}
-        }
-
-        private void ftuExit_Click(object sender, EventArgs e)
-        {
-            //if (_result != null && _result.BaseComplete)
-            //{
-            //    _utils.FineTuneRebound(_result, FineTuneConstants.Soften, FineTuneConstants.Front);
-
-            //    SetTuningResult(_result);
-
-            //    SetTuningStages(_result);
-            //}
-        }
-
-        private void ftuEntryHs_Click(object sender, EventArgs e)
-        {
-            // TODO: Set ride height
-            //if (_result != null && _result.BaseComplete)
-            //{
-            //    _utils.AdjustRideHeight(_result, FineTuneConstants.Lower, FineTuneConstants.Front);
-
-            //    ftrFrontHeight.Text = "Lower front ride height. Stage: " + _result.Springs.Height.Front;
-            //    ftrFrontHeight.ForeColor = Color.Blue;
-
-            //    SetTuningStages(_result);
-            //}
-        }
-
         private void chkWeightBased_CheckedChanged(object sender, EventArgs e)
         {
             switch (chkWeightBased.CheckState)
@@ -572,28 +468,6 @@ namespace Forza_Tuning_Calculator
 
         }
 
-        private void ftoExit_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void ftuEntryMid_Click(object sender, EventArgs e)
-        {
-            //if (_result != null && _result.BaseComplete)
-            //{
-            //    _utils.CornerEntryUs(_result);
-
-            //    ftrCastor.Text = "Increase castor angle: " + _result.Alignment.CastorAngle.ToString("n2");
-            //    ftrCastor.ForeColor = Color.Blue;
-
-            //    ftrToeOut.Text = "Increase front toe out: " + _result.Alignment.ToeOut.ToString("n2");
-            //    ftrToeOut.ForeColor = Color.Blue;
-
-            //    ftrFrontHeight.Text = "Lower front ride height. Stage: " + _result.Springs.Height.Front;
-            //    ftrFrontHeight.ForeColor = Color.Blue;
-            //}
-        }
-
         private void cmbDrivetrain_SelectedIndexChanged(object sender, EventArgs e)
         {
 
@@ -604,25 +478,16 @@ namespace Forza_Tuning_Calculator
 
         }
 
-        private void gbFineTuning_Enter(object sender, EventArgs e)
+        private void cmbStiffness_SelectedIndexChanged(object sender, EventArgs e)
         {
 
         }
 
-        private void chkFineTuning_CheckedChanged(object sender, EventArgs e)
+        private void lnkFineTuning_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            switch (chkFineTuning.CheckState)
-            {
-                case CheckState.Checked:
-                    gbFineTuning.Visible = true;
-                    this.Height = windowHeight;
-                    break;
+            lnkFineTuning.LinkVisited = true;
 
-                case CheckState.Unchecked:
-                    gbFineTuning.Visible = false;
-                    this.Height = windowHeight - gbFineTuning.Size.Height;
-                    break;
-            }
+            System.Diagnostics.Process.Start("http://i.imgur.com/byemI.jpg");
         }
     }
 }

@@ -28,26 +28,26 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.ListViewGroup listViewGroup8 = new System.Windows.Forms.ListViewGroup("Tyres", System.Windows.Forms.HorizontalAlignment.Center);
-            System.Windows.Forms.ListViewGroup listViewGroup9 = new System.Windows.Forms.ListViewGroup("Alignment", System.Windows.Forms.HorizontalAlignment.Center);
-            System.Windows.Forms.ListViewGroup listViewGroup10 = new System.Windows.Forms.ListViewGroup("Anti Roll Bars", System.Windows.Forms.HorizontalAlignment.Center);
-            System.Windows.Forms.ListViewGroup listViewGroup11 = new System.Windows.Forms.ListViewGroup("Springs", System.Windows.Forms.HorizontalAlignment.Center);
-            System.Windows.Forms.ListViewGroup listViewGroup12 = new System.Windows.Forms.ListViewGroup("Damping", System.Windows.Forms.HorizontalAlignment.Center);
-            System.Windows.Forms.ListViewGroup listViewGroup13 = new System.Windows.Forms.ListViewGroup("Aero", System.Windows.Forms.HorizontalAlignment.Center);
-            System.Windows.Forms.ListViewGroup listViewGroup14 = new System.Windows.Forms.ListViewGroup("Differential", System.Windows.Forms.HorizontalAlignment.Center);
-            System.Windows.Forms.ListViewItem listViewItem14 = new System.Windows.Forms.ListViewItem("Spring Rates");
-            System.Windows.Forms.ListViewItem listViewItem15 = new System.Windows.Forms.ListViewItem("Ride Height");
-            System.Windows.Forms.ListViewItem listViewItem16 = new System.Windows.Forms.ListViewItem("Rebound");
-            System.Windows.Forms.ListViewItem listViewItem17 = new System.Windows.Forms.ListViewItem("Bump");
-            System.Windows.Forms.ListViewItem listViewItem18 = new System.Windows.Forms.ListViewItem("ARB");
-            System.Windows.Forms.ListViewItem listViewItem19 = new System.Windows.Forms.ListViewItem("Tyre Pressure");
-            System.Windows.Forms.ListViewItem listViewItem20 = new System.Windows.Forms.ListViewItem("Camber");
-            System.Windows.Forms.ListViewItem listViewItem21 = new System.Windows.Forms.ListViewItem("Castor");
-            System.Windows.Forms.ListViewItem listViewItem22 = new System.Windows.Forms.ListViewItem("Acceleration");
-            System.Windows.Forms.ListViewItem listViewItem23 = new System.Windows.Forms.ListViewItem("Deceleration");
-            System.Windows.Forms.ListViewItem listViewItem24 = new System.Windows.Forms.ListViewItem("Bias");
-            System.Windows.Forms.ListViewItem listViewItem25 = new System.Windows.Forms.ListViewItem("Downforce");
-            System.Windows.Forms.ListViewItem listViewItem26 = new System.Windows.Forms.ListViewItem("Toe");
+            System.Windows.Forms.ListViewGroup listViewGroup1 = new System.Windows.Forms.ListViewGroup("Tyres", System.Windows.Forms.HorizontalAlignment.Center);
+            System.Windows.Forms.ListViewGroup listViewGroup2 = new System.Windows.Forms.ListViewGroup("Alignment", System.Windows.Forms.HorizontalAlignment.Center);
+            System.Windows.Forms.ListViewGroup listViewGroup3 = new System.Windows.Forms.ListViewGroup("Anti Roll Bars", System.Windows.Forms.HorizontalAlignment.Center);
+            System.Windows.Forms.ListViewGroup listViewGroup4 = new System.Windows.Forms.ListViewGroup("Springs", System.Windows.Forms.HorizontalAlignment.Center);
+            System.Windows.Forms.ListViewGroup listViewGroup5 = new System.Windows.Forms.ListViewGroup("Damping", System.Windows.Forms.HorizontalAlignment.Center);
+            System.Windows.Forms.ListViewGroup listViewGroup6 = new System.Windows.Forms.ListViewGroup("Aero", System.Windows.Forms.HorizontalAlignment.Center);
+            System.Windows.Forms.ListViewGroup listViewGroup7 = new System.Windows.Forms.ListViewGroup("Differential", System.Windows.Forms.HorizontalAlignment.Center);
+            System.Windows.Forms.ListViewItem listViewItem1 = new System.Windows.Forms.ListViewItem("Spring Rates");
+            System.Windows.Forms.ListViewItem listViewItem2 = new System.Windows.Forms.ListViewItem("Ride Height");
+            System.Windows.Forms.ListViewItem listViewItem3 = new System.Windows.Forms.ListViewItem("Rebound");
+            System.Windows.Forms.ListViewItem listViewItem4 = new System.Windows.Forms.ListViewItem("Bump");
+            System.Windows.Forms.ListViewItem listViewItem5 = new System.Windows.Forms.ListViewItem("ARB");
+            System.Windows.Forms.ListViewItem listViewItem6 = new System.Windows.Forms.ListViewItem("Tyre Pressure");
+            System.Windows.Forms.ListViewItem listViewItem7 = new System.Windows.Forms.ListViewItem("Camber");
+            System.Windows.Forms.ListViewItem listViewItem8 = new System.Windows.Forms.ListViewItem("Castor");
+            System.Windows.Forms.ListViewItem listViewItem9 = new System.Windows.Forms.ListViewItem("Acceleration");
+            System.Windows.Forms.ListViewItem listViewItem10 = new System.Windows.Forms.ListViewItem("Deceleration");
+            System.Windows.Forms.ListViewItem listViewItem11 = new System.Windows.Forms.ListViewItem("Bias");
+            System.Windows.Forms.ListViewItem listViewItem12 = new System.Windows.Forms.ListViewItem("Downforce");
+            System.Windows.Forms.ListViewItem listViewItem13 = new System.Windows.Forms.ListViewItem("Toe");
             this.lblFrontWeight = new System.Windows.Forms.Label();
             this.inputFrontWeight = new System.Windows.Forms.TextBox();
             this.gbDamping = new System.Windows.Forms.GroupBox();
@@ -78,43 +78,16 @@
             this.settingHeader = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.frontValueHeader = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.rearValueHeader = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.gbFineTuning = new System.Windows.Forms.GroupBox();
-            this.groupBox5 = new System.Windows.Forms.GroupBox();
-            this.groupBox6 = new System.Windows.Forms.GroupBox();
-            this.ftoMidHs = new System.Windows.Forms.Button();
-            this.groupBox7 = new System.Windows.Forms.GroupBox();
-            this.ftoMidMinRoll = new System.Windows.Forms.Button();
-            this.ftoMidPlusRoll = new System.Windows.Forms.Button();
-            this.ftoMidBottomOut = new System.Windows.Forms.Button();
-            this.ftoExit = new System.Windows.Forms.Button();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.groupBox4 = new System.Windows.Forms.GroupBox();
-            this.ftuMidMinRoll = new System.Windows.Forms.Button();
-            this.ftuMidPlusRoll = new System.Windows.Forms.Button();
-            this.ftuExit = new System.Windows.Forms.Button();
-            this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.ftuEntryMid = new System.Windows.Forms.Button();
-            this.ftuEntryHs = new System.Windows.Forms.Button();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.ftOvrStiffStage = new System.Windows.Forms.Label();
-            this.ftOvrSoftStage = new System.Windows.Forms.Label();
-            this.ftOvrSoft = new System.Windows.Forms.Button();
-            this.ftOvrStiff = new System.Windows.Forms.Button();
-            this.chkFineTuning = new System.Windows.Forms.CheckBox();
+            this.gbOverallStiffness = new System.Windows.Forms.GroupBox();
+            this.cmbStiffness = new System.Windows.Forms.ComboBox();
+            this.lnkFineTuning = new System.Windows.Forms.LinkLabel();
             this.gbDamping.SuspendLayout();
             this.gbSprings.SuspendLayout();
             this.gbInputs.SuspendLayout();
             this.groupBox9.SuspendLayout();
             this.gbArbs.SuspendLayout();
             this.gbResults.SuspendLayout();
-            this.gbFineTuning.SuspendLayout();
-            this.groupBox5.SuspendLayout();
-            this.groupBox6.SuspendLayout();
-            this.groupBox7.SuspendLayout();
-            this.groupBox2.SuspendLayout();
-            this.groupBox4.SuspendLayout();
-            this.groupBox3.SuspendLayout();
-            this.groupBox1.SuspendLayout();
+            this.gbOverallStiffness.SuspendLayout();
             this.SuspendLayout();
             // 
             // lblFrontWeight
@@ -237,7 +210,7 @@
             // 
             // btnTune
             // 
-            this.btnTune.Location = new System.Drawing.Point(12, 360);
+            this.btnTune.Location = new System.Drawing.Point(12, 471);
             this.btnTune.Name = "btnTune";
             this.btnTune.Size = new System.Drawing.Size(299, 23);
             this.btnTune.TabIndex = 7;
@@ -387,66 +360,66 @@
             this.settingHeader,
             this.frontValueHeader,
             this.rearValueHeader});
-            listViewGroup8.Header = "Tyres";
-            listViewGroup8.HeaderAlignment = System.Windows.Forms.HorizontalAlignment.Center;
-            listViewGroup8.Name = "Tyres";
-            listViewGroup9.Header = "Alignment";
-            listViewGroup9.HeaderAlignment = System.Windows.Forms.HorizontalAlignment.Center;
-            listViewGroup9.Name = "Alignment";
-            listViewGroup10.Header = "Anti Roll Bars";
-            listViewGroup10.HeaderAlignment = System.Windows.Forms.HorizontalAlignment.Center;
-            listViewGroup10.Name = "Anti Roll Bars";
-            listViewGroup11.Header = "Springs";
-            listViewGroup11.HeaderAlignment = System.Windows.Forms.HorizontalAlignment.Center;
-            listViewGroup11.Name = "Springs";
-            listViewGroup11.Tag = "Springs";
-            listViewGroup12.Header = "Damping";
-            listViewGroup12.HeaderAlignment = System.Windows.Forms.HorizontalAlignment.Center;
-            listViewGroup12.Name = "Damping";
-            listViewGroup12.Tag = "Damping";
-            listViewGroup13.Header = "Aero";
-            listViewGroup13.HeaderAlignment = System.Windows.Forms.HorizontalAlignment.Center;
-            listViewGroup13.Name = "Aero";
-            listViewGroup14.Header = "Differential";
-            listViewGroup14.HeaderAlignment = System.Windows.Forms.HorizontalAlignment.Center;
-            listViewGroup14.Name = "Differential";
+            listViewGroup1.Header = "Tyres";
+            listViewGroup1.HeaderAlignment = System.Windows.Forms.HorizontalAlignment.Center;
+            listViewGroup1.Name = "Tyres";
+            listViewGroup2.Header = "Alignment";
+            listViewGroup2.HeaderAlignment = System.Windows.Forms.HorizontalAlignment.Center;
+            listViewGroup2.Name = "Alignment";
+            listViewGroup3.Header = "Anti Roll Bars";
+            listViewGroup3.HeaderAlignment = System.Windows.Forms.HorizontalAlignment.Center;
+            listViewGroup3.Name = "Anti Roll Bars";
+            listViewGroup4.Header = "Springs";
+            listViewGroup4.HeaderAlignment = System.Windows.Forms.HorizontalAlignment.Center;
+            listViewGroup4.Name = "Springs";
+            listViewGroup4.Tag = "Springs";
+            listViewGroup5.Header = "Damping";
+            listViewGroup5.HeaderAlignment = System.Windows.Forms.HorizontalAlignment.Center;
+            listViewGroup5.Name = "Damping";
+            listViewGroup5.Tag = "Damping";
+            listViewGroup6.Header = "Aero";
+            listViewGroup6.HeaderAlignment = System.Windows.Forms.HorizontalAlignment.Center;
+            listViewGroup6.Name = "Aero";
+            listViewGroup7.Header = "Differential";
+            listViewGroup7.HeaderAlignment = System.Windows.Forms.HorizontalAlignment.Center;
+            listViewGroup7.Name = "Differential";
             this.resultsList.Groups.AddRange(new System.Windows.Forms.ListViewGroup[] {
-            listViewGroup8,
-            listViewGroup9,
-            listViewGroup10,
-            listViewGroup11,
-            listViewGroup12,
-            listViewGroup13,
-            listViewGroup14});
-            listViewItem14.Group = listViewGroup11;
-            listViewItem14.IndentCount = 1;
-            listViewItem14.Tag = "SpringRates";
-            listViewItem15.Group = listViewGroup11;
-            listViewItem16.Group = listViewGroup12;
-            listViewItem17.Group = listViewGroup12;
-            listViewItem18.Group = listViewGroup10;
-            listViewItem19.Group = listViewGroup8;
-            listViewItem20.Group = listViewGroup9;
-            listViewItem21.Group = listViewGroup9;
-            listViewItem22.Group = listViewGroup14;
-            listViewItem23.Group = listViewGroup14;
-            listViewItem24.Group = listViewGroup14;
-            listViewItem25.Group = listViewGroup13;
-            listViewItem26.Group = listViewGroup9;
+            listViewGroup1,
+            listViewGroup2,
+            listViewGroup3,
+            listViewGroup4,
+            listViewGroup5,
+            listViewGroup6,
+            listViewGroup7});
+            listViewItem1.Group = listViewGroup4;
+            listViewItem1.IndentCount = 1;
+            listViewItem1.Tag = "SpringRates";
+            listViewItem2.Group = listViewGroup4;
+            listViewItem3.Group = listViewGroup5;
+            listViewItem4.Group = listViewGroup5;
+            listViewItem5.Group = listViewGroup3;
+            listViewItem6.Group = listViewGroup1;
+            listViewItem7.Group = listViewGroup2;
+            listViewItem8.Group = listViewGroup2;
+            listViewItem9.Group = listViewGroup7;
+            listViewItem10.Group = listViewGroup7;
+            listViewItem11.Group = listViewGroup7;
+            listViewItem12.Group = listViewGroup6;
+            listViewItem13.Group = listViewGroup2;
             this.resultsList.Items.AddRange(new System.Windows.Forms.ListViewItem[] {
-            listViewItem14,
-            listViewItem15,
-            listViewItem16,
-            listViewItem17,
-            listViewItem18,
-            listViewItem19,
-            listViewItem20,
-            listViewItem21,
-            listViewItem22,
-            listViewItem23,
-            listViewItem24,
-            listViewItem25,
-            listViewItem26});
+            listViewItem1,
+            listViewItem2,
+            listViewItem3,
+            listViewItem4,
+            listViewItem5,
+            listViewItem6,
+            listViewItem7,
+            listViewItem8,
+            listViewItem9,
+            listViewItem10,
+            listViewItem11,
+            listViewItem12,
+            listViewItem13});
             this.resultsList.Location = new System.Drawing.Point(6, 19);
             this.resultsList.Name = "resultsList";
             this.resultsList.Size = new System.Drawing.Size(367, 463);
@@ -472,256 +445,53 @@
             this.rearValueHeader.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.rearValueHeader.Width = 129;
             // 
-            // gbFineTuning
+            // gbOverallStiffness
             // 
-            this.gbFineTuning.Controls.Add(this.groupBox5);
-            this.gbFineTuning.Controls.Add(this.groupBox2);
-            this.gbFineTuning.Controls.Add(this.groupBox1);
-            this.gbFineTuning.Location = new System.Drawing.Point(12, 506);
-            this.gbFineTuning.Name = "gbFineTuning";
-            this.gbFineTuning.Size = new System.Drawing.Size(688, 258);
-            this.gbFineTuning.TabIndex = 15;
-            this.gbFineTuning.TabStop = false;
-            this.gbFineTuning.Text = "Fine Tuning: Characteristics";
-            this.gbFineTuning.Visible = false;
-            this.gbFineTuning.Enter += new System.EventHandler(this.gbFineTuning_Enter);
+            this.gbOverallStiffness.Controls.Add(this.cmbStiffness);
+            this.gbOverallStiffness.Location = new System.Drawing.Point(12, 360);
+            this.gbOverallStiffness.Name = "gbOverallStiffness";
+            this.gbOverallStiffness.Size = new System.Drawing.Size(299, 47);
+            this.gbOverallStiffness.TabIndex = 3;
+            this.gbOverallStiffness.TabStop = false;
+            this.gbOverallStiffness.Text = "Adjust Stiffness";
             // 
-            // groupBox5
+            // cmbStiffness
             // 
-            this.groupBox5.Controls.Add(this.groupBox6);
-            this.groupBox5.Controls.Add(this.ftoExit);
-            this.groupBox5.Location = new System.Drawing.Point(151, 19);
-            this.groupBox5.Name = "groupBox5";
-            this.groupBox5.Size = new System.Drawing.Size(231, 233);
-            this.groupBox5.TabIndex = 6;
-            this.groupBox5.TabStop = false;
-            this.groupBox5.Text = "Oversteer";
+            this.cmbStiffness.FormattingEnabled = true;
+            this.cmbStiffness.Items.AddRange(new object[] {
+            "Average",
+            "Soft",
+            "Softest",
+            "Stiff"});
+            this.cmbStiffness.Location = new System.Drawing.Point(12, 20);
+            this.cmbStiffness.Name = "cmbStiffness";
+            this.cmbStiffness.Size = new System.Drawing.Size(121, 21);
+            this.cmbStiffness.TabIndex = 0;
+            this.cmbStiffness.SelectedIndexChanged += new System.EventHandler(this.cmbStiffness_SelectedIndexChanged);
             // 
-            // groupBox6
+            // lnkFineTuning
             // 
-            this.groupBox6.Controls.Add(this.ftoMidHs);
-            this.groupBox6.Controls.Add(this.groupBox7);
-            this.groupBox6.Location = new System.Drawing.Point(6, 19);
-            this.groupBox6.Name = "groupBox6";
-            this.groupBox6.Size = new System.Drawing.Size(216, 171);
-            this.groupBox6.TabIndex = 5;
-            this.groupBox6.TabStop = false;
-            this.groupBox6.Text = "Mid Corner";
-            // 
-            // ftoMidHs
-            // 
-            this.ftoMidHs.Location = new System.Drawing.Point(133, 24);
-            this.ftoMidHs.Name = "ftoMidHs";
-            this.ftoMidHs.Size = new System.Drawing.Size(74, 23);
-            this.ftoMidHs.TabIndex = 7;
-            this.ftoMidHs.Text = "High Speed";
-            this.ftoMidHs.UseVisualStyleBackColor = true;
-            // 
-            // groupBox7
-            // 
-            this.groupBox7.Controls.Add(this.ftoMidMinRoll);
-            this.groupBox7.Controls.Add(this.ftoMidPlusRoll);
-            this.groupBox7.Controls.Add(this.ftoMidBottomOut);
-            this.groupBox7.Location = new System.Drawing.Point(7, 19);
-            this.groupBox7.Name = "groupBox7";
-            this.groupBox7.Size = new System.Drawing.Size(120, 146);
-            this.groupBox7.TabIndex = 0;
-            this.groupBox7.TabStop = false;
-            this.groupBox7.Text = "Mid-Low Speed";
-            // 
-            // ftoMidMinRoll
-            // 
-            this.ftoMidMinRoll.Location = new System.Drawing.Point(6, 48);
-            this.ftoMidMinRoll.Name = "ftoMidMinRoll";
-            this.ftoMidMinRoll.Size = new System.Drawing.Size(102, 23);
-            this.ftoMidMinRoll.TabIndex = 9;
-            this.ftoMidMinRoll.Text = "No rear roll";
-            this.ftoMidMinRoll.UseVisualStyleBackColor = true;
-            // 
-            // ftoMidPlusRoll
-            // 
-            this.ftoMidPlusRoll.Location = new System.Drawing.Point(6, 19);
-            this.ftoMidPlusRoll.Name = "ftoMidPlusRoll";
-            this.ftoMidPlusRoll.Size = new System.Drawing.Size(102, 23);
-            this.ftoMidPlusRoll.TabIndex = 8;
-            this.ftoMidPlusRoll.Text = "Rear rolls";
-            this.ftoMidPlusRoll.UseVisualStyleBackColor = true;
-            // 
-            // ftoMidBottomOut
-            // 
-            this.ftoMidBottomOut.Location = new System.Drawing.Point(6, 117);
-            this.ftoMidBottomOut.Name = "ftoMidBottomOut";
-            this.ftoMidBottomOut.Size = new System.Drawing.Size(100, 23);
-            this.ftoMidBottomOut.TabIndex = 8;
-            this.ftoMidBottomOut.Text = "Bottoming Out";
-            this.ftoMidBottomOut.UseVisualStyleBackColor = true;
-            // 
-            // ftoExit
-            // 
-            this.ftoExit.Location = new System.Drawing.Point(19, 199);
-            this.ftoExit.Name = "ftoExit";
-            this.ftoExit.Size = new System.Drawing.Size(74, 23);
-            this.ftoExit.TabIndex = 4;
-            this.ftoExit.Text = "Corner Exit";
-            this.ftoExit.UseVisualStyleBackColor = true;
-            this.ftoExit.Click += new System.EventHandler(this.ftoExit_Click);
-            // 
-            // groupBox2
-            // 
-            this.groupBox2.Controls.Add(this.groupBox4);
-            this.groupBox2.Controls.Add(this.ftuExit);
-            this.groupBox2.Controls.Add(this.groupBox3);
-            this.groupBox2.Location = new System.Drawing.Point(6, 19);
-            this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(139, 234);
-            this.groupBox2.TabIndex = 4;
-            this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "Understeer";
-            // 
-            // groupBox4
-            // 
-            this.groupBox4.Controls.Add(this.ftuMidMinRoll);
-            this.groupBox4.Controls.Add(this.ftuMidPlusRoll);
-            this.groupBox4.Location = new System.Drawing.Point(6, 101);
-            this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Size = new System.Drawing.Size(124, 84);
-            this.groupBox4.TabIndex = 5;
-            this.groupBox4.TabStop = false;
-            this.groupBox4.Text = "Mid Corner";
-            // 
-            // ftuMidMinRoll
-            // 
-            this.ftuMidMinRoll.Location = new System.Drawing.Point(6, 48);
-            this.ftuMidMinRoll.Name = "ftuMidMinRoll";
-            this.ftuMidMinRoll.Size = new System.Drawing.Size(102, 23);
-            this.ftuMidMinRoll.TabIndex = 7;
-            this.ftuMidMinRoll.Text = "No front roll";
-            this.ftuMidMinRoll.UseVisualStyleBackColor = true;
-            // 
-            // ftuMidPlusRoll
-            // 
-            this.ftuMidPlusRoll.Location = new System.Drawing.Point(6, 19);
-            this.ftuMidPlusRoll.Name = "ftuMidPlusRoll";
-            this.ftuMidPlusRoll.Size = new System.Drawing.Size(102, 23);
-            this.ftuMidPlusRoll.TabIndex = 6;
-            this.ftuMidPlusRoll.Text = "Front Rolls";
-            this.ftuMidPlusRoll.UseVisualStyleBackColor = true;
-            // 
-            // ftuExit
-            // 
-            this.ftuExit.Location = new System.Drawing.Point(13, 200);
-            this.ftuExit.Name = "ftuExit";
-            this.ftuExit.Size = new System.Drawing.Size(74, 23);
-            this.ftuExit.TabIndex = 4;
-            this.ftuExit.Text = "Corner Exit";
-            this.ftuExit.UseVisualStyleBackColor = true;
-            this.ftuExit.Click += new System.EventHandler(this.ftuExit_Click);
-            // 
-            // groupBox3
-            // 
-            this.groupBox3.Controls.Add(this.ftuEntryMid);
-            this.groupBox3.Controls.Add(this.ftuEntryHs);
-            this.groupBox3.Location = new System.Drawing.Point(6, 19);
-            this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(124, 80);
-            this.groupBox3.TabIndex = 3;
-            this.groupBox3.TabStop = false;
-            this.groupBox3.Text = "Corner Entry";
-            // 
-            // ftuEntryMid
-            // 
-            this.ftuEntryMid.Location = new System.Drawing.Point(6, 49);
-            this.ftuEntryMid.Name = "ftuEntryMid";
-            this.ftuEntryMid.Size = new System.Drawing.Size(74, 23);
-            this.ftuEntryMid.TabIndex = 3;
-            this.ftuEntryMid.Text = "Mid-Low";
-            this.ftuEntryMid.UseVisualStyleBackColor = true;
-            this.ftuEntryMid.Click += new System.EventHandler(this.ftuEntryMid_Click);
-            // 
-            // ftuEntryHs
-            // 
-            this.ftuEntryHs.Location = new System.Drawing.Point(6, 20);
-            this.ftuEntryHs.Name = "ftuEntryHs";
-            this.ftuEntryHs.Size = new System.Drawing.Size(74, 23);
-            this.ftuEntryHs.TabIndex = 2;
-            this.ftuEntryHs.Text = "High Speed";
-            this.ftuEntryHs.UseVisualStyleBackColor = true;
-            this.ftuEntryHs.Click += new System.EventHandler(this.ftuEntryHs_Click);
-            // 
-            // groupBox1
-            // 
-            this.groupBox1.Controls.Add(this.ftOvrStiffStage);
-            this.groupBox1.Controls.Add(this.ftOvrSoftStage);
-            this.groupBox1.Controls.Add(this.ftOvrSoft);
-            this.groupBox1.Controls.Add(this.ftOvrStiff);
-            this.groupBox1.Location = new System.Drawing.Point(388, 19);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(178, 81);
-            this.groupBox1.TabIndex = 3;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Overall";
-            // 
-            // ftOvrStiffStage
-            // 
-            this.ftOvrStiffStage.AutoSize = true;
-            this.ftOvrStiffStage.Location = new System.Drawing.Point(120, 48);
-            this.ftOvrStiffStage.Name = "ftOvrStiffStage";
-            this.ftOvrStiffStage.Size = new System.Drawing.Size(41, 13);
-            this.ftOvrStiffStage.TabIndex = 11;
-            this.ftOvrStiffStage.Text = "label20";
-            // 
-            // ftOvrSoftStage
-            // 
-            this.ftOvrSoftStage.AutoSize = true;
-            this.ftOvrSoftStage.Location = new System.Drawing.Point(120, 19);
-            this.ftOvrSoftStage.Name = "ftOvrSoftStage";
-            this.ftOvrSoftStage.Size = new System.Drawing.Size(41, 13);
-            this.ftOvrSoftStage.TabIndex = 10;
-            this.ftOvrSoftStage.Text = "label19";
-            // 
-            // ftOvrSoft
-            // 
-            this.ftOvrSoft.Location = new System.Drawing.Point(11, 19);
-            this.ftOvrSoft.Name = "ftOvrSoft";
-            this.ftOvrSoft.Size = new System.Drawing.Size(105, 23);
-            this.ftOvrSoft.TabIndex = 0;
-            this.ftOvrSoft.Text = "Softer (general)";
-            this.ftOvrSoft.UseVisualStyleBackColor = true;
-            this.ftOvrSoft.Click += new System.EventHandler(this.ftuOvrSoft_Click);
-            // 
-            // ftOvrStiff
-            // 
-            this.ftOvrStiff.Location = new System.Drawing.Point(11, 48);
-            this.ftOvrStiff.Name = "ftOvrStiff";
-            this.ftOvrStiff.Size = new System.Drawing.Size(105, 23);
-            this.ftOvrStiff.TabIndex = 1;
-            this.ftOvrStiff.Text = "Stiffer (general)";
-            this.ftOvrStiff.UseVisualStyleBackColor = true;
-            this.ftOvrStiff.Click += new System.EventHandler(this.ftuOvrStiff_Click);
-            // 
-            // chkFineTuning
-            // 
-            this.chkFineTuning.AutoSize = true;
-            this.chkFineTuning.Location = new System.Drawing.Point(12, 389);
-            this.chkFineTuning.Name = "chkFineTuning";
-            this.chkFineTuning.Size = new System.Drawing.Size(74, 17);
-            this.chkFineTuning.TabIndex = 12;
-            this.chkFineTuning.Text = "Fine Tune";
-            this.chkFineTuning.UseVisualStyleBackColor = true;
-            this.chkFineTuning.CheckedChanged += new System.EventHandler(this.chkFineTuning_CheckedChanged);
+            this.lnkFineTuning.AutoSize = true;
+            this.lnkFineTuning.Location = new System.Drawing.Point(13, 429);
+            this.lnkFineTuning.Name = "lnkFineTuning";
+            this.lnkFineTuning.Size = new System.Drawing.Size(113, 13);
+            this.lnkFineTuning.TabIndex = 15;
+            this.lnkFineTuning.TabStop = true;
+            this.lnkFineTuning.Text = "Fine tuning information";
+            this.lnkFineTuning.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.lnkFineTuning_LinkClicked);
             // 
             // ForzaTuningCalc
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(714, 776);
-            this.Controls.Add(this.chkFineTuning);
-            this.Controls.Add(this.gbFineTuning);
+            this.ClientSize = new System.Drawing.Size(714, 511);
+            this.Controls.Add(this.lnkFineTuning);
+            this.Controls.Add(this.gbOverallStiffness);
             this.Controls.Add(this.gbResults);
             this.Controls.Add(this.btnTune);
             this.Controls.Add(this.gbInputs);
-            this.MaximumSize = new System.Drawing.Size(730, 815);
-            this.MinimumSize = new System.Drawing.Size(730, 815);
+            this.MaximumSize = new System.Drawing.Size(730, 550);
+            this.MinimumSize = new System.Drawing.Size(730, 550);
             this.Name = "ForzaTuningCalc";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Forza Tuning Calculator";
@@ -736,15 +506,7 @@
             this.gbArbs.ResumeLayout(false);
             this.gbArbs.PerformLayout();
             this.gbResults.ResumeLayout(false);
-            this.gbFineTuning.ResumeLayout(false);
-            this.groupBox5.ResumeLayout(false);
-            this.groupBox6.ResumeLayout(false);
-            this.groupBox7.ResumeLayout(false);
-            this.groupBox2.ResumeLayout(false);
-            this.groupBox4.ResumeLayout(false);
-            this.groupBox3.ResumeLayout(false);
-            this.groupBox1.ResumeLayout(false);
-            this.groupBox1.PerformLayout();
+            this.gbOverallStiffness.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -773,28 +535,6 @@
         private System.Windows.Forms.TextBox inputArbMax;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.TextBox inputArbMin;
-        private System.Windows.Forms.GroupBox gbFineTuning;
-        private System.Windows.Forms.Button ftOvrStiff;
-        private System.Windows.Forms.Button ftOvrSoft;
-        private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.Button ftuEntryHs;
-        private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.GroupBox groupBox5;
-        private System.Windows.Forms.GroupBox groupBox6;
-        private System.Windows.Forms.Button ftoExit;
-        private System.Windows.Forms.GroupBox groupBox4;
-        private System.Windows.Forms.Button ftuMidMinRoll;
-        private System.Windows.Forms.Button ftuMidPlusRoll;
-        private System.Windows.Forms.Button ftuExit;
-        private System.Windows.Forms.GroupBox groupBox3;
-        private System.Windows.Forms.Button ftuEntryMid;
-        private System.Windows.Forms.Button ftoMidHs;
-        private System.Windows.Forms.GroupBox groupBox7;
-        private System.Windows.Forms.Button ftoMidMinRoll;
-        private System.Windows.Forms.Button ftoMidPlusRoll;
-        private System.Windows.Forms.Button ftoMidBottomOut;
-        private System.Windows.Forms.Label ftOvrStiffStage;
-        private System.Windows.Forms.Label ftOvrSoftStage;
         private System.Windows.Forms.CheckBox chkWeightBased;
         private System.Windows.Forms.GroupBox groupBox9;
         private System.Windows.Forms.Label label10;
@@ -804,7 +544,9 @@
         private System.Windows.Forms.ColumnHeader settingHeader;
         private System.Windows.Forms.ColumnHeader frontValueHeader;
         private System.Windows.Forms.ColumnHeader rearValueHeader;
-        private System.Windows.Forms.CheckBox chkFineTuning;
+        private System.Windows.Forms.GroupBox gbOverallStiffness;
+        private System.Windows.Forms.ComboBox cmbStiffness;
+        private System.Windows.Forms.LinkLabel lnkFineTuning;
     }
 }
 

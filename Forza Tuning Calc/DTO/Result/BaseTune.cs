@@ -12,6 +12,8 @@ namespace Forza_Tuning_Calculator.DTO.Result
 
         public string Drivetrain;
 
+        public ChassisStiffness ChassisStiffness = new ChassisStiffness();
+
         public TyrePressureResult TyrePressure = new TyrePressureResult();
 
         public Alignment Alignment = new Alignment();

@@ -11,7 +11,16 @@
     {
         public SpringRate SpringRate = new SpringRate();
 
+        public SpringVariable SpringVariable = new SpringVariable();
+
         public RideHeight RideHeight = new RideHeight();
+    }
+
+    public class SpringVariable
+    {
+        public double FrontVariable;
+
+        public double RearVariable;
     }
 
     public class RideHeight

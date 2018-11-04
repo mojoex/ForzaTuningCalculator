@@ -4,6 +4,10 @@
     {
         public double Front;
 
+        public double FrontVariable;
+
         public double Rear;
+
+        public double RearVariable;
     }
 }

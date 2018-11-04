@@ -15,13 +15,15 @@ namespace Forza_Tuning_Calculator
             _calculate = new Calculations();
         }
 
-        public BaseTune BuildBaseTune(UserInput input)
+        public BaseTune BuildBaseTune(UserInput input, int chassisStiffness)
         {
             var result = new BaseTune();
 
             result.Drivetrain = input.Drivetrain;
             result.FrontDistrubution = input.Weight.FrontWeight / 100;
             result.RearDistribution = 1 - result.FrontDistrubution;
+
+            result.ChassisStiffness.Setting = chassisStiffness;
 
             return result;
         }
@@ -50,13 +52,48 @@ namespace Forza_Tuning_Calculator
 
             _calculate.CalculateArbs(baseTune, input);
 
-            baseTune.Aero.Front.StringifyValue(baseTune, AeroConstants.DownforceTitle, FineTuneConstants.Front);
-            baseTune.Aero.Rear.StringifyValue(baseTune, AeroConstants.DownforceTitle, FineTuneConstants.Rear);
+            baseTune.Aero.FrontRangeMin.StringifyValue(baseTune, AeroConstants.DownforceTitle, FineTuneConstants.Front);
+            baseTune.Aero.FrontRangeMax.StringifyValue(baseTune, AeroConstants.DownforceTitle, FineTuneConstants.Rear);
 
             baseTune.Suspension.Springs.RideHeight.Front.StringifyValue(baseTune, SuspensionConstants.RideHeightTitle, FineTuneConstants.Front);
             baseTune.Suspension.Springs.RideHeight.Rear.StringifyValue(baseTune, SuspensionConstants.RideHeightTitle, FineTuneConstants.Rear);
 
             SetDiffSettings(baseTune);
+
+            ApplyGlobalStiffnessSettings(baseTune);
+        }
+
+        private void ApplyGlobalStiffnessSettings(BaseTune baseTune)
+        {
+            switch (baseTune.ChassisStiffness.Setting)
+            {
+                case 1:
+                    baseTune.Suspension.Springs.SpringRate.Front = baseTune.Suspension.Springs.SpringRate.Front + baseTune.Suspension.Springs.SpringVariable.FrontVariable;
+                    baseTune.Suspension.Springs.SpringRate.Rear = baseTune.Suspension.Springs.SpringRate.Rear + baseTune.Suspension.Springs.SpringVariable.RearVariable;
+
+                    baseTune.ARB.Front = baseTune.ARB.Front + baseTune.ARB.FrontVariable;
+                    baseTune.ARB.Rear = baseTune.ARB.Rear + baseTune.ARB.RearVariable;
+                    break;
+
+                case -1:
+                    baseTune.Suspension.Springs.SpringRate.Front = baseTune.Suspension.Springs.SpringRate.Front - baseTune.Suspension.Springs.SpringVariable.FrontVariable;
+                    baseTune.Suspension.Springs.SpringRate.Rear = baseTune.Suspension.Springs.SpringRate.Rear - baseTune.Suspension.Springs.SpringVariable.RearVariable;
+
+                    baseTune.ARB.Front = baseTune.ARB.Front - baseTune.ARB.FrontVariable;
+                    baseTune.ARB.Rear = baseTune.ARB.Rear - baseTune.ARB.RearVariable;
+                    break;
+
+                case -2:
+                    baseTune.Suspension.Springs.SpringRate.Front = baseTune.Suspension.Springs.SpringRate.Front - (baseTune.Suspension.Springs.SpringVariable.FrontVariable * 2);
+                    baseTune.Suspension.Springs.SpringRate.Rear = baseTune.Suspension.Springs.SpringRate.Rear - (baseTune.Suspension.Springs.SpringVariable.RearVariable * 2);
+
+                    baseTune.ARB.Front = baseTune.ARB.Front - (baseTune.ARB.FrontVariable * 2);
+                    baseTune.ARB.Rear = baseTune.ARB.Rear - (baseTune.ARB.RearVariable * 2);
+                    break;
+
+                default:
+                    break;
+            }
         }
 
         private void SetDiffSettings(BaseTune baseTune)

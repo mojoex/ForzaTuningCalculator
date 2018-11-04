@@ -78,6 +78,7 @@
     <Compile Include="DTO\Input\UserInput.cs" />
     <Compile Include="DTO\Metrics\Alignment.cs" />
     <Compile Include="DTO\Metrics\AntiRollBars.cs" />
+    <Compile Include="DTO\Metrics\ChassisStiffness.cs" />
     <Compile Include="DTO\Result\BaseTune.cs" />
     <Compile Include="DTO\Result\FineTune.cs" />
     <Compile Include="DTO\Metrics\Generic.cs" />

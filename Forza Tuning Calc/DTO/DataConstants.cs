@@ -19,7 +19,7 @@ namespace Forza_Tuning_Calculator.DTO
             RearDecel = 40,
             FrontAccel = 20,
             FrontDecel = 0,
-            Bias = 80
+            Bias = 75
         };
 
         public DifferentialResult RWDDiff = new DifferentialResult()

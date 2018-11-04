@@ -23,11 +23,15 @@
     /// </summary>
     public class AeroResult
     {
-        public int Front = 50;
+        public int FrontRangeMin = 55;
+
+        public int FrontRangeMax = 100;
 
         public string StringFront;
 
-        public int Rear = 50;
+        public int RearRangeMin = 40;
+
+        public int RearRangeMax = 100;
 
         public string StringRear;
     }

@@ -1,4 +1,5 @@
 ﻿using Forza_Tuning_Calculator.DTO.Constants;
+using Forza_Tuning_Calculator.DTO.Metrics;
 using Forza_Tuning_Calculator.DTO.Result;
 
 namespace Forza_Tuning_Calculator
@@ -27,13 +28,13 @@ namespace Forza_Tuning_Calculator
                 case AeroConstants.DownforceTitle:
                     if (location == FineTuneConstants.Front)
                     {
-                        baseTune.Aero.StringFront = $"{baseTune.Aero.Front}" +
+                        baseTune.Aero.StringFront = $"{baseTune.Aero.FrontRangeMin} - {baseTune.Aero.FrontRangeMax}" +
                             "% of bar";
                     }
 
                     if (location == FineTuneConstants.Rear)
                     {
-                        baseTune.Aero.StringRear = $"{baseTune.Aero.Rear}" +
+                        baseTune.Aero.StringRear = $"{baseTune.Aero.RearRangeMin} - {baseTune.Aero.RearRangeMax}" +
                             "% of bar";
                     }
 
@@ -44,6 +45,18 @@ namespace Forza_Tuning_Calculator
         public static void StringifyValue(this double value, BaseTune baseTune, string method)
         {
 
+        }
+
+        public static void GetVariables(this SpringsResult result, int stiffnessSetting)
+        {
+            result.SpringVariable.FrontVariable = (result.SpringRate.Front / 4) / 3;
+            result.SpringVariable.RearVariable = (result.SpringRate.Rear / 4) / 3;
+        }
+
+        public static void GetVariables(this AntiRollBars result, int stiffnessSetting)
+        {
+            result.FrontVariable = (result.Front / 4) / 3;
+            result.RearVariable = (result.Rear / 4) / 3;
         }
     }
 }

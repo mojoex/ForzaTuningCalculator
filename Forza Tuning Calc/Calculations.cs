@@ -47,6 +47,8 @@ namespace Forza_Tuning_Calculator
                 baseTune.Suspension.Springs.SpringRate.Front = ((max - min) * baseTune.FrontDistrubution) + min;
                 baseTune.Suspension.Springs.SpringRate.Rear = ((max - min) * baseTune.RearDistribution) + min;
 
+                baseTune.Suspension.Springs.GetVariables(baseTune.ChassisStiffness.Setting);
+
                 //result.FrontVar = (result.Front / 4) / 3;
                 //result.RearVar = (result.Rear / 4) / 3;
             }
@@ -61,6 +63,7 @@ namespace Forza_Tuning_Calculator
             baseTune.ARB.Front = ((max - min) * baseTune.FrontDistrubution) + min;
             baseTune.ARB.Rear = ((max - min) * baseTune.RearDistribution) + min;
 
+            baseTune.ARB.GetVariables(baseTune.ChassisStiffness.Setting);
             //result.FrontVar = (result.Front / 4) / 3;
             //result.RearVar = (result.Rear / 4) / 3;
         }
